@@ -1,0 +1,338 @@
+[2019-01-29T10:33:48.997] [INFO] default - [p 8801] Listening at port 3000
+[2019-01-29T10:35:32.424] [INFO] default - [p 9056] Listening at port 3000
+[2019-01-29T10:35:42.415] [ERROR] default - AwilixTypeError: build: expected targetOrResolver to be a function or class, but got createUsuario.
+    at Function.assert (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix/lib/errors.js:83:19)
+    at Object.build (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix/lib/container.js:310:34)
+    at middlewareFactoryHandler (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix-express/lib/invokers.js:106:34)
+    at Layer.handle [as handle_request] (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/layer.js:95:5)
+    at /home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:275:10)
+[2019-01-29T10:35:42.430] [INFO] default - [0mGET /api/usuarios [31m500 [0m9.970 ms - -[0m
+[2019-01-29T10:36:45.233] [INFO] default - [p 9091] Listening at port 3000
+[2019-01-29T10:37:00.085] [ERROR] default - AwilixTypeError: build: expected targetOrResolver to be a function or class, but got createUsuario.
+    at Function.assert (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix/lib/errors.js:83:19)
+    at Object.build (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix/lib/container.js:310:34)
+    at middlewareFactoryHandler (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix-express/lib/invokers.js:106:34)
+    at Layer.handle [as handle_request] (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/layer.js:95:5)
+    at /home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:275:10)
+[2019-01-29T10:37:00.107] [INFO] default - [0mGET /api/usuarios [31m500 [0m21.121 ms - -[0m
+[2019-01-29T10:37:15.660] [INFO] default - [p 9138] Listening at port 3000
+[2019-01-29T10:37:21.594] [ERROR] default - AwilixTypeError: build: expected targetOrResolver to be a function or class, but got createUsuario.
+    at Function.assert (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix/lib/errors.js:83:19)
+    at Object.build (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix/lib/container.js:310:34)
+    at middlewareFactoryHandler (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix-express/lib/invokers.js:106:34)
+    at Layer.handle [as handle_request] (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/layer.js:95:5)
+    at /home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:275:10)
+[2019-01-29T10:37:21.611] [INFO] default - [0mGET /api/usuarios [31m500 [0m9.273 ms - -[0m
+[2019-01-29T10:41:25.200] [INFO] default - [p 9249] Listening at port 3000
+[2019-01-29T10:41:33.983] [ERROR] default - AwilixTypeError: build: expected targetOrResolver to be a function or class, but got createUsuario.
+    at Function.assert (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix/lib/errors.js:83:19)
+    at Object.build (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix/lib/container.js:310:34)
+    at middlewareFactoryHandler (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix-express/lib/invokers.js:106:34)
+    at Layer.handle [as handle_request] (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/layer.js:95:5)
+    at /home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:275:10)
+[2019-01-29T10:41:33.995] [INFO] default - [0mGET /api/usuarios [31m500 [0m13.844 ms - -[0m
+[2019-01-29T10:42:02.159] [INFO] default - [p 9314] Listening at port 3000
+[2019-01-29T10:42:06.269] [ERROR] default - AwilixTypeError: build: expected targetOrResolver to be a function or class, but got createUsuario.
+    at Function.assert (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix/lib/errors.js:83:19)
+    at Object.build (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix/lib/container.js:310:34)
+    at middlewareFactoryHandler (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix-express/lib/invokers.js:106:34)
+    at Layer.handle [as handle_request] (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/layer.js:95:5)
+    at /home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:275:10)
+[2019-01-29T10:42:06.282] [INFO] default - [0mGET /api/usuarios [31m500 [0m11.220 ms - -[0m
+[2019-01-29T10:47:00.172] [INFO] default - [p 9453] Listening at port 3000
+[2019-01-29T10:47:05.013] [INFO] default - [p 9494] Listening at port 3000
+[2019-01-29T10:48:41.428] [INFO] default - [p 9541] Listening at port 3000
+[2019-01-29T10:49:46.228] [INFO] default - [p 9594] Listening at port 3000
+[2019-01-29T10:50:50.134] [INFO] default - [p 9617] Listening at port 3000
+[2019-01-29T10:50:53.369] [ERROR] default - AwilixTypeError: build: expected targetOrResolver to be a function or class, but got createUsuario.
+    at Function.assert (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix/lib/errors.js:83:19)
+    at Object.build (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix/lib/container.js:310:34)
+    at middlewareFactoryHandler (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix-express/lib/invokers.js:106:34)
+    at Layer.handle [as handle_request] (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/layer.js:95:5)
+    at /home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:275:10)
+[2019-01-29T10:50:53.392] [INFO] default - [0mGET /api/usuarios [31m500 [0m20.657 ms - -[0m
+[2019-01-29T10:52:31.286] [INFO] default - [p 9675] Listening at port 3000
+[2019-01-29T10:52:37.516] [ERROR] default - AwilixTypeError: build: expected targetOrResolver to be a function or class, but got createUsuario.
+    at Function.assert (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix/lib/errors.js:83:19)
+    at Object.build (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix/lib/container.js:310:34)
+    at middlewareFactoryHandler (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix-express/lib/invokers.js:106:34)
+    at Layer.handle [as handle_request] (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/layer.js:95:5)
+    at /home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:275:10)
+[2019-01-29T10:52:37.531] [INFO] default - [0mGET /api/usuarios [31m500 [0m12.545 ms - -[0m
+[2019-01-29T10:56:03.575] [INFO] default - [p 9809] Listening at port 3000
+[2019-01-29T10:56:08.354] [ERROR] default - AwilixTypeError: build: expected targetOrResolver to be a function or class, but got createUsuario.
+    at Function.assert (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix/lib/errors.js:83:19)
+    at Object.build (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix/lib/container.js:310:34)
+    at middlewareFactoryHandler (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix-express/lib/invokers.js:106:34)
+    at Layer.handle [as handle_request] (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/layer.js:95:5)
+    at /home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:275:10)
+[2019-01-29T10:56:08.367] [INFO] default - [0mGET /api/usuarios [31m500 [0m11.630 ms - -[0m
+[2019-01-29T10:56:36.490] [INFO] default - [p 9840] Listening at port 3000
+[2019-01-29T10:56:40.267] [ERROR] default - AwilixTypeError: build: expected targetOrResolver to be a function or class, but got createUsuario.
+    at Function.assert (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix/lib/errors.js:83:19)
+    at Object.build (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix/lib/container.js:310:34)
+    at middlewareFactoryHandler (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix-express/lib/invokers.js:106:34)
+    at Layer.handle [as handle_request] (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/layer.js:95:5)
+    at /home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:275:10)
+[2019-01-29T10:56:40.289] [INFO] default - [0mGET /api/usuarios [31m500 [0m13.230 ms - -[0m
+[2019-01-29T10:57:02.245] [INFO] default - [p 9868] Listening at port 3000
+[2019-01-29T11:02:59.438] [INFO] default - [p 10259] Listening at port 3000
+[2019-01-29T11:03:03.389] [ERROR] default - AwilixTypeError: build: expected targetOrResolver to be a function or class, but got createUsuario.
+    at Function.assert (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix/lib/errors.js:83:19)
+    at Object.build (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix/lib/container.js:310:34)
+    at middlewareFactoryHandler (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix-express/lib/invokers.js:106:34)
+    at Layer.handle [as handle_request] (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/layer.js:95:5)
+    at /home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:275:10)
+[2019-01-29T11:03:03.405] [INFO] default - [0mGET /api/usuarios [31m500 [0m9.739 ms - -[0m
+[2019-01-29T11:03:39.653] [INFO] default - [p 10294] Listening at port 3000
+[2019-01-29T11:03:44.336] [ERROR] default - AwilixTypeError: build: expected targetOrResolver to be a function or class, but got createUsuario.
+    at Function.assert (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix/lib/errors.js:83:19)
+    at Object.build (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix/lib/container.js:310:34)
+    at middlewareFactoryHandler (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix-express/lib/invokers.js:106:34)
+    at Layer.handle [as handle_request] (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/layer.js:95:5)
+    at /home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:275:10)
+[2019-01-29T11:03:44.349] [INFO] default - [0mGET /api/usuarios [31m500 [0m10.860 ms - -[0m
+[2019-01-29T11:04:12.508] [INFO] default - [p 10343] Listening at port 3000
+[2019-01-29T11:04:14.643] [ERROR] default - AwilixTypeError: build: expected targetOrResolver to be a function or class, but got createUsuario.
+    at Function.assert (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix/lib/errors.js:83:19)
+    at Object.build (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix/lib/container.js:310:34)
+    at middlewareFactoryHandler (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix-express/lib/invokers.js:106:34)
+    at Layer.handle [as handle_request] (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/layer.js:95:5)
+    at /home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:275:10)
+[2019-01-29T11:04:14.659] [INFO] default - [0mGET /api/usuarios [31m500 [0m12.122 ms - -[0m
+[2019-01-29T11:05:13.437] [INFO] default - [p 10386] Listening at port 3000
+[2019-01-29T11:05:16.591] [INFO] default - [p 10427] Listening at port 3000
+[2019-01-29T11:05:19.937] [ERROR] default - AwilixTypeError: build: expected targetOrResolver to be a function or class, but got creteUsuario.
+    at Function.assert (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix/lib/errors.js:83:19)
+    at Object.build (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix/lib/container.js:310:34)
+    at middlewareFactoryHandler (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix-express/lib/invokers.js:106:34)
+    at Layer.handle [as handle_request] (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/layer.js:95:5)
+    at /home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:275:10)
+[2019-01-29T11:05:19.947] [INFO] default - [0mGET /api/usuarios [31m500 [0m9.468 ms - -[0m
+[2019-01-29T11:07:10.003] [INFO] default - [p 10482] Listening at port 3000
+[2019-01-29T11:07:12.638] [INFO] default - [p 10522] Listening at port 3000
+[2019-01-29T11:07:57.348] [INFO] default - [p 10548] Listening at port 3000
+[2019-01-29T11:08:00.788] [ERROR] default - AwilixTypeError: build: expected targetOrResolver to be a function or class, but got createUsuario.
+    at Function.assert (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix/lib/errors.js:83:19)
+    at Object.build (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix/lib/container.js:310:34)
+    at middlewareFactoryHandler (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix-express/lib/invokers.js:106:34)
+    at Layer.handle [as handle_request] (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/layer.js:95:5)
+    at /home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:275:10)
+[2019-01-29T11:08:00.798] [INFO] default - [0mGET /api/usuarios [31m500 [0m9.524 ms - -[0m
+[2019-01-29T11:18:26.380] [INFO] default - [p 11107] Listening at port 3000
+[2019-01-29T11:18:29.078] [INFO] default - [0mGET /api/usuarios [33m403 [0m4.255 ms - 43[0m
+[2019-01-29T11:18:55.707] [INFO] default - [p 11134] Listening at port 3000
+[2019-01-29T11:18:59.974] [INFO] default - [0mGET /api/usuarios [32m201 [0m26.038 ms - 45[0m
+[2019-01-29T11:36:18.039] [INFO] default - [p 11455] Listening at port 3000
+[2019-01-29T11:36:20.354] [INFO] default - [p 11468] Listening at port 3000
+[2019-01-29T11:49:00.977] [INFO] default - [p 11757] Listening at port 3000
+[2019-01-29T11:49:09.977] [ERROR] default - Error: The method attempting to be invoked, 'createUsuario', does not exist on the controller
+    at memberInvoker (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix-express/lib/invokers.js:83:23)
+    at Layer.handle [as handle_request] (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/layer.js:95:5)
+    at /home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:174:3)
+    at router (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:47:12)
+[2019-01-29T11:49:09.988] [INFO] default - [0mGET /api/usuarios [31m500 [0m9.236 ms - -[0m
+[2019-01-29T11:49:24.004] [INFO] default - [p 11787] Listening at port 3000
+[2019-01-29T11:49:27.390] [ERROR] default - Error: The method attempting to be invoked, 'createUsuario', does not exist on the controller
+    at memberInvoker (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix-express/lib/invokers.js:83:23)
+    at Layer.handle [as handle_request] (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/layer.js:95:5)
+    at /home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:174:3)
+    at router (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:47:12)
+[2019-01-29T11:49:27.406] [INFO] default - [0mGET /api/usuarios [31m500 [0m12.744 ms - -[0m
+[2019-01-29T11:50:06.356] [INFO] default - [p 11825] Listening at port 3000
+[2019-01-29T11:50:10.586] [ERROR] default - TypeError: Cannot read property 'outputs' of undefined
+    at Object.create (/home/lap0020-2018/Documentos/adm_personal/src/interfaces/http/usuarios/UsuariosController.js:17:70)
+    at asyncWrappedMiddleware (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix-express/lib/invokers.js:127:27)
+    at memberInvoker (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix-express/lib/invokers.js:85:79)
+    at Layer.handle [as handle_request] (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/layer.js:95:5)
+    at /home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:275:10)
+[2019-01-29T11:50:10.598] [INFO] default - [0mGET /api/usuarios [31m500 [0m23.701 ms - -[0m
+[2019-01-29T11:50:46.116] [INFO] default - [p 11893] Listening at port 3000
+[2019-01-29T11:50:53.525] [ERROR] default - TypeError: Cannot read property 'outputs' of undefined
+    at Object.create (/home/lap0020-2018/Documentos/adm_personal/src/interfaces/http/usuarios/UsuariosController.js:17:70)
+    at asyncWrappedMiddleware (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix-express/lib/invokers.js:127:27)
+    at memberInvoker (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix-express/lib/invokers.js:85:79)
+    at Layer.handle [as handle_request] (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/layer.js:95:5)
+    at /home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:275:10)
+[2019-01-29T11:50:53.537] [INFO] default - [0mGET /api/usuarios [31m500 [0m26.675 ms - -[0m
+[2019-01-29T11:51:32.084] [INFO] default - [p 11934] Listening at port 3000
+[2019-01-29T11:51:33.887] [INFO] default - [p 11948] Listening at port 3000
+[2019-01-29T11:51:37.445] [INFO] default - [0mGET /api/usuarios [32m201 [0m21.700 ms - 45[0m
+[2019-01-29T11:54:06.651] [INFO] default - [p 11998] Listening at port 3000
+[2019-01-29T11:54:13.341] [ERROR] default - AwilixResolutionError: Could not resolve 'todosService'.
+
+Resolution path: todosService
+    at resolve (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix/lib/container.js:232:23)
+    at Object.get (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix/lib/container.js:63:32)
+    at new TodoAPI (/home/lap0020-2018/Documentos/adm_personal/src/interfaces/http/usuarios/UsuariosController.js:14:19)
+    at newClass (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix/lib/resolvers.js:85:24)
+    at Object.resolve (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix/lib/resolvers.js:294:20)
+    at Object.build (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix/lib/container.js:305:37)
+    at memberInvoker (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix-express/lib/invokers.js:80:38)
+    at Layer.handle [as handle_request] (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/route.js:112:3)
+[2019-01-29T11:54:13.354] [INFO] default - [0mGET /api/usuarios [31m500 [0m11.703 ms - -[0m
+[2019-01-29T11:54:29.080] [INFO] default - [p 12023] Listening at port 3000
+[2019-01-29T11:54:45.207] [ERROR] default - ReferenceError: createUsuario is not defined
+    at TodoAPI.create (/home/lap0020-2018/Documentos/adm_personal/src/interfaces/http/usuarios/UsuariosController.js:21:52)
+    at asyncWrappedMiddleware (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix-express/lib/invokers.js:127:27)
+    at memberInvoker (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix-express/lib/invokers.js:85:79)
+    at Layer.handle [as handle_request] (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/layer.js:95:5)
+    at /home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:275:10)
+[2019-01-29T11:54:45.223] [INFO] default - [0mGET /api/usuarios [31m500 [0m27.439 ms - -[0m
+[2019-01-29T11:55:20.077] [INFO] default - [p 12055] Listening at port 3000
+[2019-01-29T11:55:23.992] [ERROR] default - AwilixResolutionError: Could not resolve 'CreateUsuario'.
+
+Resolution path: CreateUsuario
+    at resolve (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix/lib/container.js:232:23)
+    at Object.get (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix/lib/container.js:63:32)
+    at new TodoAPI (/home/lap0020-2018/Documentos/adm_personal/src/interfaces/http/usuarios/UsuariosController.js:14:19)
+    at newClass (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix/lib/resolvers.js:85:24)
+    at Object.resolve (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix/lib/resolvers.js:294:20)
+    at Object.build (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix/lib/container.js:305:37)
+    at memberInvoker (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix-express/lib/invokers.js:80:38)
+    at Layer.handle [as handle_request] (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/route.js:112:3)
+[2019-01-29T11:55:24.014] [INFO] default - [0mGET /api/usuarios [31m500 [0m13.903 ms - -[0m
+[2019-01-29T11:55:55.120] [INFO] default - [p 12090] Listening at port 3000
+[2019-01-29T11:55:58.215] [ERROR] default - AwilixResolutionError: Could not resolve 'CreateUsuario'.
+
+Resolution path: CreateUsuario
+    at resolve (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix/lib/container.js:232:23)
+    at Object.get (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix/lib/container.js:63:32)
+    at new TodoAPI (/home/lap0020-2018/Documentos/adm_personal/src/interfaces/http/usuarios/UsuariosController.js:14:19)
+    at newClass (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix/lib/resolvers.js:85:24)
+    at Object.resolve (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix/lib/resolvers.js:294:20)
+    at Object.build (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix/lib/container.js:305:37)
+    at memberInvoker (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix-express/lib/invokers.js:80:38)
+    at Layer.handle [as handle_request] (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/route.js:112:3)
+[2019-01-29T11:55:58.232] [INFO] default - [0mGET /api/usuarios [31m500 [0m12.288 ms - -[0m
+[2019-01-29T11:56:34.526] [INFO] default - [p 12126] Listening at port 3000
+[2019-01-29T11:56:38.162] [ERROR] default - TypeError: Cannot read property 'outputs' of undefined
+    at TodoAPI.create (/home/lap0020-2018/Documentos/adm_personal/src/interfaces/http/usuarios/UsuariosController.js:21:66)
+    at asyncWrappedMiddleware (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix-express/lib/invokers.js:127:27)
+    at memberInvoker (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix-express/lib/invokers.js:85:79)
+    at Layer.handle [as handle_request] (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/layer.js:95:5)
+    at /home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:275:10)
+[2019-01-29T11:56:38.176] [INFO] default - [0mGET /api/usuarios [31m500 [0m44.063 ms - -[0m
+[2019-01-29T11:56:48.494] [INFO] default - [p 12149] Listening at port 3000
+[2019-01-29T11:56:58.324] [ERROR] default - ReferenceError: createUsuario is not defined
+    at TodoAPI.create (/home/lap0020-2018/Documentos/adm_personal/src/interfaces/http/usuarios/UsuariosController.js:21:52)
+    at asyncWrappedMiddleware (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix-express/lib/invokers.js:127:27)
+    at memberInvoker (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix-express/lib/invokers.js:85:79)
+    at Layer.handle [as handle_request] (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/layer.js:95:5)
+    at /home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:275:10)
+[2019-01-29T11:56:58.341] [INFO] default - [0mGET /api/usuarios [31m500 [0m37.170 ms - -[0m
+[2019-01-29T11:57:27.660] [INFO] default - [p 12175] Listening at port 3000
+[2019-01-29T11:57:35.641] [INFO] default - [0mGET /api/usuarios [32m201 [0m21.929 ms - 45[0m
