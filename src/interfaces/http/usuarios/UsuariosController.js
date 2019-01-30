@@ -23,7 +23,7 @@ const UsuariosController = {
     // router.post('/list', inject('getAllUsuariosByPageSizeAndBodyJSON'), verificarToken, this.allUsuariosByPageSizeAndBodyJSON); //lista usuario
     // router.get('/:codigoUsuario', inject('getUsuarioByCodigoUsuario'), verificarToken, this.show);
     // router.get('/', api('create')); //create
-    router.get('/', inject('createUsuario'),this.create); //create
+    router.post('/create', inject('createUsuario'),this.create); //create
     // router.put('/:codigoUsuario', inject('updateUsuario'), verificarToken, this.update);
     // router.delete('/:codigoUsuario', inject('deleteUsuario'), verificarToken, this.delete);
 
@@ -32,32 +32,17 @@ const UsuariosController = {
 
   create(req, res, next) {
     console.log("create user");
-    console.log(req)
-    const {
-      createUsuario /*, usuarioSerializer */
-    } = req;
-    const {
-      SUCCESS,
-      ERROR,
-      VALIDATION_ERROR
-    } = createUsuario.outputs;
-    return res.status(Status.CREATED).json({
-      message: "retorno desde usuarioController"
-    })
-
-    createUsuario
-      .on(SUCCESS, (usuario) => {
-        console.log(usuario)
-        return res.status(Status.CREATED).json({
-          message: "retorno desde usuarioController"
-        })
-        // res
-        //   .status(Status.CREATED)
-        //   .json({
-        //     status: "success",
-        //     message: "Los datos de usuario "+Globals.MESSAGE_CREACION_PLURAL,
-        //     data: usuarioSerializer.serialize(usuario)
-        //   });
+    
+    const {createUsuario} =req;
+    const { SUCCESS, ERROR, VALIDATION_ERROR } = createUsuario.outputs;
+    createUsuario.on(SUCCESS, (usuario) => {
+        res
+          .status(Status.CREATED)
+          .json({
+            status: "success",
+            message: "Los datos de usuario "+Globals.MESSAGE_CREACION_PLURAL,
+            data: usuario// usuarioSerializer.serialize(usuario)
+          });
       })
       .on(VALIDATION_ERROR, (error) => {
         res.status(Status.BAD_REQUEST).json({
@@ -65,10 +50,11 @@ const UsuariosController = {
           status: error.details.status,
           message: error.details.message
         });
-      })
+      })    
       .on(ERROR, next);
 
-    createUsuario.execute(req.user, req.body);
+    createUsuario.execute(req.body);
+    
   },
   all(req, res, next) {
 

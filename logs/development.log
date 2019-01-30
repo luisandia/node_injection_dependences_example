@@ -3571,3 +3571,752 @@ From previous event:
   type: 'SELECT',
   model: personal }
 [2019-01-30T15:12:16.619] [INFO] default - [0mGET /api/usuarios/list?page=0&size=10 [32m200 [0m30.431 ms - 158[0m
+[2019-01-30T15:41:36.145] [INFO] default - Executing (default): SELECT 1+1 AS result { logging: [Function: bound ],
+  plain: true,
+  raw: true,
+  type: 'SELECT' }
+[2019-01-30T15:41:36.150] [INFO] default - [p 14382] Listening at port 3000
+[2019-01-30T15:50:45.241] [INFO] default - Executing (default): SELECT 1+1 AS result { logging: [Function: bound ],
+  plain: true,
+  raw: true,
+  type: 'SELECT' }
+[2019-01-30T15:50:45.248] [INFO] default - [p 14765] Listening at port 3000
+[2019-01-30T15:52:03.194] [INFO] default - Executing (default): SELECT 1+1 AS result { logging: [Function: bound ],
+  plain: true,
+  raw: true,
+  type: 'SELECT' }
+[2019-01-30T15:52:03.198] [INFO] default - [p 14858] Listening at port 3000
+[2019-01-30T15:54:26.304] [INFO] default - Executing (default): SELECT 1+1 AS result { logging: [Function: bound ],
+  plain: true,
+  raw: true,
+  type: 'SELECT' }
+[2019-01-30T15:54:26.311] [INFO] default - [p 14986] Listening at port 3000
+[2019-01-30T15:56:09.954] [INFO] default - Executing (default): SELECT 1+1 AS result { logging: [Function: bound ],
+  plain: true,
+  raw: true,
+  type: 'SELECT' }
+[2019-01-30T15:56:09.963] [INFO] default - [p 15084] Listening at port 3000
+[2019-01-30T15:57:30.635] [INFO] default - Executing (default): SELECT 1+1 AS result { logging: [Function: bound ],
+  plain: true,
+  raw: true,
+  type: 'SELECT' }
+[2019-01-30T15:57:30.642] [INFO] default - [p 15177] Listening at port 3000
+[2019-01-30T15:57:46.574] [INFO] default - Executing (default): SELECT 1+1 AS result { logging: [Function: bound ],
+  plain: true,
+  raw: true,
+  type: 'SELECT' }
+[2019-01-30T15:57:46.582] [INFO] default - [p 15226] Listening at port 3000
+[2019-01-30T16:03:29.479] [INFO] default - Executing (default): SELECT 1+1 AS result { logging: [Function: bound ],
+  plain: true,
+  raw: true,
+  type: 'SELECT' }
+[2019-01-30T16:03:29.483] [INFO] default - [p 15568] Listening at port 3000
+[2019-01-30T16:03:31.723] [INFO] default - Executing (default): SELECT 1+1 AS result { logging: [Function: bound ],
+  plain: true,
+  raw: true,
+  type: 'SELECT' }
+[2019-01-30T16:03:31.749] [INFO] default - [p 15636] Listening at port 3000
+[2019-01-30T16:04:41.705] [INFO] default - Executing (default): SELECT 1+1 AS result { logging: [Function: bound ],
+  plain: true,
+  raw: true,
+  type: 'SELECT' }
+[2019-01-30T16:04:41.718] [INFO] default - [p 15708] Listening at port 3000
+[2019-01-30T16:05:06.382] [INFO] default - Executing (default): SELECT 1+1 AS result { logging: [Function: bound ],
+  plain: true,
+  raw: true,
+  type: 'SELECT' }
+[2019-01-30T16:05:06.391] [INFO] default - [p 15761] Listening at port 3000
+[2019-01-30T16:05:29.393] [INFO] default - Executing (default): SELECT 1+1 AS result { logging: [Function: bound ],
+  plain: true,
+  raw: true,
+  type: 'SELECT' }
+[2019-01-30T16:05:29.408] [INFO] default - [p 15812] Listening at port 3000
+[2019-01-30T16:06:34.357] [INFO] default - Executing (default): SELECT 1+1 AS result { logging: [Function: bound ],
+  plain: true,
+  raw: true,
+  type: 'SELECT' }
+[2019-01-30T16:06:34.363] [INFO] default - [p 15891] Listening at port 3000
+[2019-01-30T16:07:11.917] [ERROR] default - ReferenceError: createUsuario is not defined
+    at create (/home/lap0020-2018/Documentos/adm_personal/src/interfaces/http/usuarios/UsuariosController.js:37:5)
+    at Layer.handle [as handle_request] (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/route.js:137:13)
+    at injectMiddleware (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix-express/lib/inject.js:11:12)
+    at Layer.handle [as handle_request] (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/layer.js:95:5)
+    at /home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:275:10)
+    at injectMiddleware (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix-express/lib/inject.js:11:12)
+    at Layer.handle [as handle_request] (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:317:13)
+    at /home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:174:3)
+    at router (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:317:13)
+    at /home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:284:7
+[2019-01-30T16:07:11.934] [INFO] default - [0mPOST /api/usuarios/create [31m500 [0m34.616 ms - -[0m
+[2019-01-30T16:08:25.642] [INFO] default - Executing (default): SELECT 1+1 AS result { logging: [Function: bound ],
+  plain: true,
+  raw: true,
+  type: 'SELECT' }
+[2019-01-30T16:08:25.665] [INFO] default - [p 16057] Listening at port 3000
+[2019-01-30T16:08:29.541] [ERROR] default - ReferenceError: SUCCESS is not defined
+    at create (/home/lap0020-2018/Documentos/adm_personal/src/interfaces/http/usuarios/UsuariosController.js:38:22)
+    at Layer.handle [as handle_request] (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/route.js:137:13)
+    at injectMiddleware (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix-express/lib/inject.js:11:12)
+    at Layer.handle [as handle_request] (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/layer.js:95:5)
+    at /home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:275:10)
+    at injectMiddleware (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix-express/lib/inject.js:11:12)
+    at Layer.handle [as handle_request] (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:317:13)
+    at /home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:174:3)
+    at router (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:317:13)
+    at /home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:284:7
+[2019-01-30T16:08:29.553] [INFO] default - [0mPOST /api/usuarios/create [31m500 [0m35.272 ms - -[0m
+[2019-01-30T16:10:48.891] [INFO] default - Executing (default): SELECT 1+1 AS result { logging: [Function: bound ],
+  plain: true,
+  raw: true,
+  type: 'SELECT' }
+[2019-01-30T16:10:48.911] [INFO] default - [p 16212] Listening at port 3000
+[2019-01-30T16:11:42.331] [INFO] default - Executing (default): SELECT 1+1 AS result { logging: [Function: bound ],
+  plain: true,
+  raw: true,
+  type: 'SELECT' }
+[2019-01-30T16:11:42.341] [INFO] default - [p 16278] Listening at port 3000
+[2019-01-30T16:11:49.836] [INFO] default - [0mPOST /api/usuarios/create [32m201 [0m22.228 ms - 132[0m
+[2019-01-30T16:11:49.845] [INFO] default - Executing (default): INSERT INTO "personal" ("id") VALUES (DEFAULT) RETURNING *; { logging: [Function: bound ],
+  plain: false,
+  raw: false,
+  hooks: true,
+  validate: true,
+  fields: [ 'id', 'nombres', 'a_paterno', 'a_materno' ],
+  defaultFields: [ 'id', 'nombres', 'a_paterno', 'a_materno' ],
+  returning: true,
+  hasTrigger: undefined,
+  dialect: 'postgres',
+  dialectModulePath: null,
+  host: 'localhost',
+  protocol: 'tcp',
+  define: {},
+  query: {},
+  sync: {},
+  timezone: '+00:00',
+  omitNull: false,
+  native: false,
+  replication: false,
+  ssl: undefined,
+  pool: { max: 50, min: 20, idle: 15000 },
+  quoteIdentifiers: true,
+  retry: { max: 5, match: [ 'SQLITE_BUSY: database is locked' ] },
+  transactionType: 'DEFERRED',
+  isolationLevel: null,
+  databaseVersion: '9.3.25',
+  typeValidation: false,
+  benchmark: false,
+  operatorsAliases: true,
+  username: 'postgres',
+  password: 'postgres',
+  database: 'adm_personal',
+  type: 'INSERT',
+  instance: 
+   personal {
+     dataValues: { id: null },
+     _previousDataValues: {},
+     _changed: {},
+     _modelOptions: 
+      { timestamps: false,
+        validate: {},
+        freezeTableName: true,
+        underscored: false,
+        underscoredAll: false,
+        paranoid: false,
+        rejectOnEmpty: false,
+        whereCollection: null,
+        schema: null,
+        schemaDelimiter: '',
+        defaultScope: {},
+        scopes: [],
+        indexes: [],
+        name: [Object],
+        omitNull: false,
+        sequelize: [Object],
+        hooks: {},
+        uniqueKeys: {} },
+     _options: 
+      { isNewRecord: true,
+        _schema: null,
+        _schemaDelimiter: '',
+        attributes: undefined,
+        include: undefined,
+        raw: undefined,
+        silent: undefined },
+     __eagerlyLoadedAssociations: [],
+     isNewRecord: true },
+  model: personal }
+[2019-01-30T16:11:49.891] [ERROR] default - Error: Can't set headers after they are sent.
+    at validateHeader (_http_outgoing.js:491:11)
+    at ServerResponse.setHeader (_http_outgoing.js:498:3)
+    at ServerResponse.header (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/response.js:767:10)
+    at ServerResponse.send (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/response.js:170:12)
+    at ServerResponse.json (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/response.js:267:15)
+    at CreateUsuario.createUsuario.on (/home/lap0020-2018/Documentos/adm_personal/src/interfaces/http/usuarios/UsuariosController.js:42:12)
+    at emitOne (events.js:116:13)
+    at CreateUsuario.emit (events.js:211:7)
+    at CreateUsuario.execute (/home/lap0020-2018/Documentos/adm_personal/src/app/usuario/CreateUsuario.js:26:12)
+    at <anonymous>
+[2019-01-30T16:12:24.823] [INFO] default - Executing (default): SELECT 1+1 AS result { logging: [Function: bound ],
+  plain: true,
+  raw: true,
+  type: 'SELECT' }
+[2019-01-30T16:12:24.829] [INFO] default - [p 16359] Listening at port 3000
+[2019-01-30T16:12:34.093] [INFO] default - Executing (default): INSERT INTO "personal" ("id") VALUES (DEFAULT) RETURNING *; { logging: [Function: bound ],
+  plain: false,
+  raw: false,
+  hooks: true,
+  validate: true,
+  fields: [ 'id', 'nombres', 'a_paterno', 'a_materno' ],
+  defaultFields: [ 'id', 'nombres', 'a_paterno', 'a_materno' ],
+  returning: true,
+  hasTrigger: undefined,
+  dialect: 'postgres',
+  dialectModulePath: null,
+  host: 'localhost',
+  protocol: 'tcp',
+  define: {},
+  query: {},
+  sync: {},
+  timezone: '+00:00',
+  omitNull: false,
+  native: false,
+  replication: false,
+  ssl: undefined,
+  pool: { max: 50, min: 20, idle: 15000 },
+  quoteIdentifiers: true,
+  retry: { max: 5, match: [ 'SQLITE_BUSY: database is locked' ] },
+  transactionType: 'DEFERRED',
+  isolationLevel: null,
+  databaseVersion: '9.3.25',
+  typeValidation: false,
+  benchmark: false,
+  operatorsAliases: true,
+  username: 'postgres',
+  password: 'postgres',
+  database: 'adm_personal',
+  type: 'INSERT',
+  instance: 
+   personal {
+     dataValues: { id: null },
+     _previousDataValues: {},
+     _changed: {},
+     _modelOptions: 
+      { timestamps: false,
+        validate: {},
+        freezeTableName: true,
+        underscored: false,
+        underscoredAll: false,
+        paranoid: false,
+        rejectOnEmpty: false,
+        whereCollection: null,
+        schema: null,
+        schemaDelimiter: '',
+        defaultScope: {},
+        scopes: [],
+        indexes: [],
+        name: [Object],
+        omitNull: false,
+        sequelize: [Object],
+        hooks: {},
+        uniqueKeys: {} },
+     _options: 
+      { isNewRecord: true,
+        _schema: null,
+        _schemaDelimiter: '',
+        attributes: undefined,
+        include: undefined,
+        raw: undefined,
+        silent: undefined },
+     __eagerlyLoadedAssociations: [],
+     isNewRecord: true },
+  model: personal }
+[2019-01-30T16:12:34.138] [INFO] default - [0mPOST /api/usuarios/create [32m201 [0m142.385 ms - 85[0m
+[2019-01-30T16:13:07.557] [INFO] default - Executing (default): INSERT INTO "personal" ("id","a_paterno","a_materno") VALUES (DEFAULT,'1','2') RETURNING *; { logging: [Function: bound ],
+  plain: false,
+  raw: false,
+  hooks: true,
+  validate: true,
+  fields: [ 'id', 'nombres', 'a_paterno', 'a_materno' ],
+  defaultFields: [ 'id', 'nombres', 'a_paterno', 'a_materno' ],
+  returning: true,
+  hasTrigger: undefined,
+  dialect: 'postgres',
+  dialectModulePath: null,
+  host: 'localhost',
+  protocol: 'tcp',
+  define: {},
+  query: {},
+  sync: {},
+  timezone: '+00:00',
+  omitNull: false,
+  native: false,
+  replication: false,
+  ssl: undefined,
+  pool: { max: 50, min: 20, idle: 15000 },
+  quoteIdentifiers: true,
+  retry: { max: 5, match: [ 'SQLITE_BUSY: database is locked' ] },
+  transactionType: 'DEFERRED',
+  isolationLevel: null,
+  databaseVersion: '9.3.25',
+  typeValidation: false,
+  benchmark: false,
+  operatorsAliases: true,
+  username: 'postgres',
+  password: 'postgres',
+  database: 'adm_personal',
+  type: 'INSERT',
+  instance: 
+   personal {
+     dataValues: { id: null, a_paterno: '1', a_materno: '2' },
+     _previousDataValues: { a_paterno: undefined, a_materno: undefined },
+     _changed: { a_paterno: true, a_materno: true },
+     _modelOptions: 
+      { timestamps: false,
+        validate: {},
+        freezeTableName: true,
+        underscored: false,
+        underscoredAll: false,
+        paranoid: false,
+        rejectOnEmpty: false,
+        whereCollection: null,
+        schema: null,
+        schemaDelimiter: '',
+        defaultScope: {},
+        scopes: [],
+        indexes: [],
+        name: [Object],
+        omitNull: false,
+        sequelize: [Object],
+        hooks: {},
+        uniqueKeys: {} },
+     _options: 
+      { isNewRecord: true,
+        _schema: null,
+        _schemaDelimiter: '',
+        attributes: undefined,
+        include: undefined,
+        raw: undefined,
+        silent: undefined },
+     __eagerlyLoadedAssociations: [],
+     isNewRecord: true },
+  model: personal }
+[2019-01-30T16:13:07.586] [INFO] default - [0mPOST /api/usuarios/create [32m201 [0m332.252 ms - 85[0m
+[2019-01-30T16:13:31.198] [INFO] default - Executing (default): INSERT INTO "personal" ("id","a_paterno","a_materno") VALUES (DEFAULT,'carlos','andia') RETURNING *; { logging: [Function: bound ],
+  plain: false,
+  raw: false,
+  hooks: true,
+  validate: true,
+  fields: [ 'id', 'nombres', 'a_paterno', 'a_materno' ],
+  defaultFields: [ 'id', 'nombres', 'a_paterno', 'a_materno' ],
+  returning: true,
+  hasTrigger: undefined,
+  dialect: 'postgres',
+  dialectModulePath: null,
+  host: 'localhost',
+  protocol: 'tcp',
+  define: {},
+  query: {},
+  sync: {},
+  timezone: '+00:00',
+  omitNull: false,
+  native: false,
+  replication: false,
+  ssl: undefined,
+  pool: { max: 50, min: 20, idle: 15000 },
+  quoteIdentifiers: true,
+  retry: { max: 5, match: [ 'SQLITE_BUSY: database is locked' ] },
+  transactionType: 'DEFERRED',
+  isolationLevel: null,
+  databaseVersion: '9.3.25',
+  typeValidation: false,
+  benchmark: false,
+  operatorsAliases: true,
+  username: 'postgres',
+  password: 'postgres',
+  database: 'adm_personal',
+  type: 'INSERT',
+  instance: 
+   personal {
+     dataValues: { id: null, a_paterno: 'carlos', a_materno: 'andia' },
+     _previousDataValues: { a_paterno: undefined, a_materno: undefined },
+     _changed: { a_paterno: true, a_materno: true },
+     _modelOptions: 
+      { timestamps: false,
+        validate: {},
+        freezeTableName: true,
+        underscored: false,
+        underscoredAll: false,
+        paranoid: false,
+        rejectOnEmpty: false,
+        whereCollection: null,
+        schema: null,
+        schemaDelimiter: '',
+        defaultScope: {},
+        scopes: [],
+        indexes: [],
+        name: [Object],
+        omitNull: false,
+        sequelize: [Object],
+        hooks: {},
+        uniqueKeys: {} },
+     _options: 
+      { isNewRecord: true,
+        _schema: null,
+        _schemaDelimiter: '',
+        attributes: undefined,
+        include: undefined,
+        raw: undefined,
+        silent: undefined },
+     __eagerlyLoadedAssociations: [],
+     isNewRecord: true },
+  model: personal }
+[2019-01-30T16:13:31.219] [INFO] default - [0mPOST /api/usuarios/create [32m201 [0m69.995 ms - 85[0m
+[2019-01-30T16:14:40.662] [INFO] default - Executing (default): SELECT 1+1 AS result { logging: [Function: bound ],
+  plain: true,
+  raw: true,
+  type: 'SELECT' }
+[2019-01-30T16:14:40.668] [INFO] default - [p 16772] Listening at port 3000
+[2019-01-30T16:14:48.953] [INFO] default - Executing (default): INSERT INTO "personal" ("id","a_paterno","a_materno") VALUES (DEFAULT,'carlos','andia') RETURNING *; { logging: [Function: bound ],
+  plain: false,
+  raw: false,
+  hooks: true,
+  validate: true,
+  fields: [ 'id', 'nombres', 'a_paterno', 'a_materno' ],
+  defaultFields: [ 'id', 'nombres', 'a_paterno', 'a_materno' ],
+  returning: true,
+  hasTrigger: undefined,
+  dialect: 'postgres',
+  dialectModulePath: null,
+  host: 'localhost',
+  protocol: 'tcp',
+  define: {},
+  query: {},
+  sync: {},
+  timezone: '+00:00',
+  omitNull: false,
+  native: false,
+  replication: false,
+  ssl: undefined,
+  pool: { max: 50, min: 20, idle: 15000 },
+  quoteIdentifiers: true,
+  retry: { max: 5, match: [ 'SQLITE_BUSY: database is locked' ] },
+  transactionType: 'DEFERRED',
+  isolationLevel: null,
+  databaseVersion: '9.3.25',
+  typeValidation: false,
+  benchmark: false,
+  operatorsAliases: true,
+  username: 'postgres',
+  password: 'postgres',
+  database: 'adm_personal',
+  type: 'INSERT',
+  instance: 
+   personal {
+     dataValues: { id: null, a_paterno: 'carlos', a_materno: 'andia' },
+     _previousDataValues: { a_paterno: undefined, a_materno: undefined },
+     _changed: { a_paterno: true, a_materno: true },
+     _modelOptions: 
+      { timestamps: false,
+        validate: {},
+        freezeTableName: true,
+        underscored: false,
+        underscoredAll: false,
+        paranoid: false,
+        rejectOnEmpty: false,
+        whereCollection: null,
+        schema: null,
+        schemaDelimiter: '',
+        defaultScope: {},
+        scopes: [],
+        indexes: [],
+        name: [Object],
+        omitNull: false,
+        sequelize: [Object],
+        hooks: {},
+        uniqueKeys: {} },
+     _options: 
+      { isNewRecord: true,
+        _schema: null,
+        _schemaDelimiter: '',
+        attributes: undefined,
+        include: undefined,
+        raw: undefined,
+        silent: undefined },
+     __eagerlyLoadedAssociations: [],
+     isNewRecord: true },
+  model: personal }
+[2019-01-30T16:14:49.012] [INFO] default - [0mPOST /api/usuarios/create [32m201 [0m160.719 ms - 85[0m
+[2019-01-30T16:15:11.712] [INFO] default - Executing (default): SELECT 1+1 AS result { logging: [Function: bound ],
+  plain: true,
+  raw: true,
+  type: 'SELECT' }
+[2019-01-30T16:15:11.737] [INFO] default - [p 16878] Listening at port 3000
+[2019-01-30T16:15:15.239] [INFO] default - Executing (default): INSERT INTO "personal" ("id","a_paterno","a_materno") VALUES (DEFAULT,'carlos','andia') RETURNING *; { logging: [Function: bound ],
+  plain: false,
+  raw: false,
+  hooks: true,
+  validate: true,
+  fields: [ 'id', 'nombres', 'a_paterno', 'a_materno' ],
+  defaultFields: [ 'id', 'nombres', 'a_paterno', 'a_materno' ],
+  returning: true,
+  hasTrigger: undefined,
+  dialect: 'postgres',
+  dialectModulePath: null,
+  host: 'localhost',
+  protocol: 'tcp',
+  define: {},
+  query: {},
+  sync: {},
+  timezone: '+00:00',
+  omitNull: false,
+  native: false,
+  replication: false,
+  ssl: undefined,
+  pool: { max: 50, min: 20, idle: 15000 },
+  quoteIdentifiers: true,
+  retry: { max: 5, match: [ 'SQLITE_BUSY: database is locked' ] },
+  transactionType: 'DEFERRED',
+  isolationLevel: null,
+  databaseVersion: '9.3.25',
+  typeValidation: false,
+  benchmark: false,
+  operatorsAliases: true,
+  username: 'postgres',
+  password: 'postgres',
+  database: 'adm_personal',
+  type: 'INSERT',
+  instance: 
+   personal {
+     dataValues: { id: null, a_paterno: 'carlos', a_materno: 'andia' },
+     _previousDataValues: { a_paterno: undefined, a_materno: undefined },
+     _changed: { a_paterno: true, a_materno: true },
+     _modelOptions: 
+      { timestamps: false,
+        validate: {},
+        freezeTableName: true,
+        underscored: false,
+        underscoredAll: false,
+        paranoid: false,
+        rejectOnEmpty: false,
+        whereCollection: null,
+        schema: null,
+        schemaDelimiter: '',
+        defaultScope: {},
+        scopes: [],
+        indexes: [],
+        name: [Object],
+        omitNull: false,
+        sequelize: [Object],
+        hooks: {},
+        uniqueKeys: {} },
+     _options: 
+      { isNewRecord: true,
+        _schema: null,
+        _schemaDelimiter: '',
+        attributes: undefined,
+        include: undefined,
+        raw: undefined,
+        silent: undefined },
+     __eagerlyLoadedAssociations: [],
+     isNewRecord: true },
+  model: personal }
+[2019-01-30T16:15:15.264] [INFO] default - [0mPOST /api/usuarios/create [32m201 [0m122.258 ms - 85[0m
+[2019-01-30T16:15:58.009] [INFO] default - Executing (default): SELECT 1+1 AS result { logging: [Function: bound ],
+  plain: true,
+  raw: true,
+  type: 'SELECT' }
+[2019-01-30T16:15:58.016] [INFO] default - [p 17006] Listening at port 3000
+[2019-01-30T16:16:00.733] [INFO] default - Executing (default): INSERT INTO "personal" ("id","a_paterno","a_materno") VALUES (DEFAULT,'carlos','andia') RETURNING *; { logging: [Function: bound ],
+  plain: false,
+  raw: false,
+  hooks: true,
+  validate: true,
+  fields: [ 'id', 'nombres', 'a_paterno', 'a_materno' ],
+  defaultFields: [ 'id', 'nombres', 'a_paterno', 'a_materno' ],
+  returning: true,
+  hasTrigger: undefined,
+  dialect: 'postgres',
+  dialectModulePath: null,
+  host: 'localhost',
+  protocol: 'tcp',
+  define: {},
+  query: {},
+  sync: {},
+  timezone: '+00:00',
+  omitNull: false,
+  native: false,
+  replication: false,
+  ssl: undefined,
+  pool: { max: 50, min: 20, idle: 15000 },
+  quoteIdentifiers: true,
+  retry: { max: 5, match: [ 'SQLITE_BUSY: database is locked' ] },
+  transactionType: 'DEFERRED',
+  isolationLevel: null,
+  databaseVersion: '9.3.25',
+  typeValidation: false,
+  benchmark: false,
+  operatorsAliases: true,
+  username: 'postgres',
+  password: 'postgres',
+  database: 'adm_personal',
+  type: 'INSERT',
+  instance: 
+   personal {
+     dataValues: { id: null, a_paterno: 'carlos', a_materno: 'andia' },
+     _previousDataValues: { a_paterno: undefined, a_materno: undefined },
+     _changed: { a_paterno: true, a_materno: true },
+     _modelOptions: 
+      { timestamps: false,
+        validate: {},
+        freezeTableName: true,
+        underscored: false,
+        underscoredAll: false,
+        paranoid: false,
+        rejectOnEmpty: false,
+        whereCollection: null,
+        schema: null,
+        schemaDelimiter: '',
+        defaultScope: {},
+        scopes: [],
+        indexes: [],
+        name: [Object],
+        omitNull: false,
+        sequelize: [Object],
+        hooks: {},
+        uniqueKeys: {} },
+     _options: 
+      { isNewRecord: true,
+        _schema: null,
+        _schemaDelimiter: '',
+        attributes: undefined,
+        include: undefined,
+        raw: undefined,
+        silent: undefined },
+     __eagerlyLoadedAssociations: [],
+     isNewRecord: true },
+  model: personal }
+[2019-01-30T16:16:00.780] [INFO] default - [0mPOST /api/usuarios/create [32m201 [0m112.379 ms - 85[0m
+[2019-01-30T16:17:15.303] [INFO] default - Executing (default): SELECT 1+1 AS result { logging: [Function: bound ],
+  plain: true,
+  raw: true,
+  type: 'SELECT' }
+[2019-01-30T16:17:15.309] [INFO] default - [p 17117] Listening at port 3000
+[2019-01-30T16:17:19.701] [INFO] default - Executing (default): INSERT INTO "personal" ("id","a_paterno","a_materno") VALUES (DEFAULT,'carlos','andia') RETURNING *; { logging: [Function: bound ],
+  plain: false,
+  raw: false,
+  hooks: true,
+  validate: true,
+  fields: [ 'id', 'nombres', 'a_paterno', 'a_materno' ],
+  defaultFields: [ 'id', 'nombres', 'a_paterno', 'a_materno' ],
+  returning: true,
+  hasTrigger: undefined,
+  dialect: 'postgres',
+  dialectModulePath: null,
+  host: 'localhost',
+  protocol: 'tcp',
+  define: {},
+  query: {},
+  sync: {},
+  timezone: '+00:00',
+  omitNull: false,
+  native: false,
+  replication: false,
+  ssl: undefined,
+  pool: { max: 50, min: 20, idle: 15000 },
+  quoteIdentifiers: true,
+  retry: { max: 5, match: [ 'SQLITE_BUSY: database is locked' ] },
+  transactionType: 'DEFERRED',
+  isolationLevel: null,
+  databaseVersion: '9.3.25',
+  typeValidation: false,
+  benchmark: false,
+  operatorsAliases: true,
+  username: 'postgres',
+  password: 'postgres',
+  database: 'adm_personal',
+  type: 'INSERT',
+  instance: 
+   personal {
+     dataValues: { id: null, a_paterno: 'carlos', a_materno: 'andia' },
+     _previousDataValues: { a_paterno: undefined, a_materno: undefined },
+     _changed: { a_paterno: true, a_materno: true },
+     _modelOptions: 
+      { timestamps: false,
+        validate: {},
+        freezeTableName: true,
+        underscored: false,
+        underscoredAll: false,
+        paranoid: false,
+        rejectOnEmpty: false,
+        whereCollection: null,
+        schema: null,
+        schemaDelimiter: '',
+        defaultScope: {},
+        scopes: [],
+        indexes: [],
+        name: [Object],
+        omitNull: false,
+        sequelize: [Object],
+        hooks: {},
+        uniqueKeys: {} },
+     _options: 
+      { isNewRecord: true,
+        _schema: null,
+        _schemaDelimiter: '',
+        attributes: undefined,
+        include: undefined,
+        raw: undefined,
+        silent: undefined },
+     __eagerlyLoadedAssociations: [],
+     isNewRecord: true },
+  model: personal }
+[2019-01-30T16:17:19.756] [INFO] default - Executing (default): SELECT "id", "nombres", "a_paterno", "a_materno" FROM "personal" AS "personal" WHERE "personal"."id" = 9; { logging: [Function: bound ],
+  plain: true,
+  raw: false,
+  where: '"personal"."id" = 9',
+  rejectOnEmpty: false,
+  hooks: true,
+  attributes: [ 'id', 'nombres', 'a_paterno', 'a_materno' ],
+  tableNames: [ 'personal' ],
+  type: 'SELECT',
+  model: personal }
+[2019-01-30T16:17:19.765] [INFO] default - [0mPOST /api/usuarios/create [32m201 [0m148.215 ms - 145[0m
+[2019-01-30T16:22:44.518] [INFO] default - Executing (default): SELECT 1+1 AS result { logging: [Function: bound ],
+  plain: true,
+  raw: true,
+  type: 'SELECT' }
+[2019-01-30T16:22:44.525] [INFO] default - [p 17378] Listening at port 3000
+[2019-01-30T16:23:18.431] [INFO] default - Executing (default): SELECT 1+1 AS result { logging: [Function: bound ],
+  plain: true,
+  raw: true,
+  type: 'SELECT' }
+[2019-01-30T16:23:18.441] [INFO] default - [p 17438] Listening at port 3000
+[2019-01-30T16:23:27.997] [INFO] default - Executing (default): SELECT 1+1 AS result { logging: [Function: bound ],
+  plain: true,
+  raw: true,
+  type: 'SELECT' }
+[2019-01-30T16:23:28.008] [INFO] default - [p 17479] Listening at port 3000
