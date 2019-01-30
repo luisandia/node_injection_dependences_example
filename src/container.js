@@ -23,7 +23,6 @@ const devErrorHandler = require('./interfaces/http/errors/devErrorHandler');
 const swaggerMiddleware = require('./interfaces/http/swagger/swaggerMiddleware');
 const logger = require('./infra/logging/logger');
 
-
 const container = createContainer();
 
 // System
@@ -52,15 +51,42 @@ container
         swaggerMiddleware: asValue([swaggerMiddleware])
     });
 
-
+/***************************  USUARIO  *******************************/
 const {
     CreateUsuario,
-
+    GetAllUsuarios
 } = require('./app/usuario');
-// Operacion para Usuario
 container.register({
     createUsuario: asClass(CreateUsuario),
+    getAllUsuarios: asClass(GetAllUsuarios),
 });
-console.log("mi create user")
-console.log(container.resolve('createUsuario'))
+
+const SequelizeUsuariosRepository = require('./infra/usuario/SequelizeUsuariosRepository');
+container.register({
+    usuariosRepository: asClass(SequelizeUsuariosRepository).singleton(),
+});
+
+
+
+/*************************** DATABASE ****************************/
+const {
+    database,
+    Usuario: UsuarioModel,
+} = require('./infra/database/models');
+container.register({
+    database: asValue(database),
+    UsuarioModel: asValue(UsuarioModel),
+
+});
 module.exports = container;
+
+
+
+
+/************************* SERIALIZADORES ***************************/
+const UsuariosPageSerializer = require('./interfaces/http/usuarios/UsuariosPageSerializer');
+container.register({
+    usuariosPageSerializer: asValue(UsuariosPageSerializer),
+});
+
+
