@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+CAUTION: Do not modify this file unless you know what you are doing.
+         Unexpected results may occur if the code is changed deliberately.
+-->
+<dbmodel pgmodeler-ver="0.8.2" last-position="0,96" last-zoom="1"
+	 default-schema="public" default-owner="postgres">
+<database name="new_database">
+</database>
+
+<schema name="public" fill-color="#e1e1e1" sql-disabled="true">
+</schema>
+
+<table name="personal">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="140" y="300"/>
+	<column name="id" not-null="true">
+		<type name="serial"/>
+	</column>
+	<column name="nombres">
+		<type name="text" length="50"/>
+	</column>
+	<column name="a_paterno">
+		<type name="text"/>
+	</column>
+	<column name="a_materno">
+		<type name="text"/>
+	</column>
+	<constraint name="id_primary_key" type="pk-constr" table="public.personal">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="asistencias">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="660" y="140"/>
+	<column name="id" not-null="true">
+		<type name="serial"/>
+	</column>
+	<column name="fk_asistencias">
+		<type name="integer"/>
+	</column>
+	<column name="codigo">
+		<type name="text"/>
+	</column>
+	<column name="fecha_registrada">
+		<type name="date"/>
+	</column>
+	<constraint name="pk_asistencias" type="pk-constr" table="public.asistencias">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="personal_metas">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="660" y="280"/>
+	<column name="id" not-null="true">
+		<type name="serial"/>
+	</column>
+	<column name="fk_personal_metas">
+		<type name="integer"/>
+	</column>
+	<column name="meta">
+		<type name="text"/>
+	</column>
+	<column name="fecha_prevista">
+		<type name="date"/>
+	</column>
+	<column name="observaciones">
+		<type name="text"/>
+	</column>
+	<constraint name="pk_personal_metas" type="pk-constr" table="public.personal_metas">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="personal_documentos">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="640" y="540"/>
+	<column name="id" not-null="true">
+		<type name="serial"/>
+	</column>
+	<column name="fk_personal_id">
+		<type name="smallint"/>
+	</column>
+	<column name="nombre">
+		<type name="text"/>
+	</column>
+	<column name="descripcion">
+		<type name="text"/>
+	</column>
+	<column name="ubicacion_documento">
+		<type name="text"/>
+	</column>
+	<column name="createdAt">
+		<type name="date"/>
+	</column>
+	<column name="editedAt">
+		<type name="date"/>
+	</column>
+	<constraint name="pk_personal_documentos" type="pk-constr" table="public.personal_documentos">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<constraint name="fk_asistencias" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.personal" table="public.asistencias">
+	<columns names="fk_asistencias" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk_personal_metas" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.personal" table="public.personal_metas">
+	<columns names="fk_personal_metas" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk_id_personal_documentos" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.personal" table="public.personal_documentos">
+	<columns names="fk_personal_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<relationship name="rel_personal_documentos_personal" type="relfk"
+	 src-table="public.personal_documentos"
+	 dst-table="public.personal"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_personal_metas_personal" type="relfk"
+	 src-table="public.personal_metas"
+	 dst-table="public.personal"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_asistencias_personal" type="relfk"
+	 src-table="public.asistencias"
+	 dst-table="public.personal"
+	 src-required="false" dst-required="false"/>
+
+</dbmodel>
