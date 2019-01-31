@@ -23,7 +23,7 @@ module.exports = {
     });
 
     loaded.database = sequelize;
-
+    sequelize.sync()
     return loaded;
   }
 };

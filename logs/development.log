@@ -4320,3 +4320,8 @@ From previous event:
   raw: true,
   type: 'SELECT' }
 [2019-01-30T16:23:28.008] [INFO] default - [p 17479] Listening at port 3000
+[2019-01-31T11:44:15.962] [INFO] default - Executing (default): SELECT 1+1 AS result { logging: [Function: bound ],
+  plain: true,
+  raw: true,
+  type: 'SELECT' }
+[2019-01-31T11:44:15.967] [INFO] default - [p 13301] Listening at port 3000
