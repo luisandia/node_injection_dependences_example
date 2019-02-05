@@ -66,27 +66,55 @@ container.register({
     usuariosRepository: asClass(SequelizeUsuariosRepository).singleton(),
 });
 
+/*************************** PERSONAL *****************************/
+
+const {
+    CreatePersonal,
+    UpdatePersonal,
+    DeletePersonal,
+    GetPersonal
+} = require('./app/personal');
+container.register({
+    createPersonal: asClass(CreatePersonal),
+    updatePersonal: asClass(UpdatePersonal),
+    deletePersonal: asClass(DeletePersonal),
+    getPersonal: asClass(GetPersonal)
+});
+
+const SequelizePersonalRepository = require('./infra/personal/SequelizePersonalRepository');
+container.register({
+    personalRepository: asClass(SequelizePersonalRepository).singleton(),
+});
+
+
+
+
 
 
 /*************************** DATABASE ****************************/
 const {
     database,
     Usuario: UsuarioModel,
+    personal:PersonalModel,
 } = require('./infra/database/models');
 container.register({
     database: asValue(database),
     UsuarioModel: asValue(UsuarioModel),
+    PersonalModel: asValue(PersonalModel),
 
 });
-module.exports = container;
 
 
 
 
 /************************* SERIALIZADORES ***************************/
 const UsuariosPageSerializer = require('./interfaces/http/usuarios/UsuariosPageSerializer');
+const PersonalPageSerializer = require('./interfaces/http/personal/PersonalPageSerializer');
 container.register({
-    usuariosPageSerializer: asValue(UsuariosPageSerializer),
+  usuariosPageSerializer: asValue(UsuariosPageSerializer),
+  personalPageSerializer: asValue(PersonalPageSerializer),
 });
 
 
+
+module.exports = container;

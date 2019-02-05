@@ -1,7 +1,7 @@
 'use strict';
 const Globals = require('src/utils/Globals');
 
-
+//FIXME: BORRAME
 module.exports = function(sequelize, DataTypes) {
   const Usuario = sequelize.define('personal', {
     id: {

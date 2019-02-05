@@ -3,125 +3,146 @@
 CAUTION: Do not modify this file unless you know what you are doing.
          Unexpected results may occur if the code is changed deliberately.
 -->
-<dbmodel pgmodeler-ver="0.8.2" last-position="0,96" last-zoom="1"
+<dbmodel pgmodeler-ver="0.9.1-beta" last-position="0,0" last-zoom="1"
 	 default-schema="public" default-owner="postgres">
-<database name="new_database">
+<database name="adm_personal">
 </database>
 
 <schema name="public" fill-color="#e1e1e1" sql-disabled="true">
 </schema>
 
-<table name="personal">
+<table name="personal" hide-ext-attribs="true">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="140" y="300"/>
+	<position x="60" y="260"/>
 	<column name="id" not-null="true">
-		<type name="serial"/>
+		<type name="serial" length="1"/>
 	</column>
-	<column name="nombres">
+	<column name="nombres" not-null="true">
 		<type name="text" length="50"/>
 	</column>
-	<column name="a_paterno">
-		<type name="text"/>
+	<column name="a_paterno" not-null="true">
+		<type name="text" length="1"/>
 	</column>
-	<column name="a_materno">
-		<type name="text"/>
+	<column name="a_materno" not-null="true">
+		<type name="text" length="1"/>
 	</column>
-	<constraint name="id_primary_key" type="pk-constr" table="public.personal">
+	<constraint name="id_pk" type="pk-constr" table="public.personal">
 		<columns names="id" ref-type="src-columns"/>
 	</constraint>
 </table>
 
-<table name="asistencias">
+<table name="asistencias" hide-ext-attribs="true">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="660" y="140"/>
+	<position x="760" y="80"/>
 	<column name="id" not-null="true">
-		<type name="serial"/>
+		<type name="serial" length="1"/>
 	</column>
-	<column name="fk_asistencias">
-		<type name="integer"/>
+	<column name="personal_id">
+		<type name="integer" length="1"/>
 	</column>
-	<column name="codigo">
-		<type name="text"/>
+	<column name="nombre">
+		<type name="text" length="0"/>
 	</column>
-	<column name="fecha_registrada">
-		<type name="date"/>
+	<column name="descripcion">
+		<type name="text" length="1"/>
+	</column>
+	<column name="createdAt">
+		<type name="date" length="1"/>
+	</column>
+	<column name="updatedAt">
+		<type name="date" length="0"/>
 	</column>
 	<constraint name="pk_asistencias" type="pk-constr" table="public.asistencias">
 		<columns names="id" ref-type="src-columns"/>
 	</constraint>
 </table>
 
-<table name="personal_metas">
+<table name="personal_metas" hide-ext-attribs="true">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="660" y="280"/>
+	<position x="820" y="480"/>
 	<column name="id" not-null="true">
-		<type name="serial"/>
+		<type name="serial" length="1"/>
 	</column>
-	<column name="fk_personal_metas">
-		<type name="integer"/>
+	<column name="personal_id">
+		<type name="integer" length="1"/>
 	</column>
 	<column name="meta">
-		<type name="text"/>
+		<type name="text" length="1"/>
 	</column>
 	<column name="fecha_prevista">
-		<type name="date"/>
+		<type name="date" length="1"/>
 	</column>
 	<column name="observaciones">
-		<type name="text"/>
+		<type name="text" length="1"/>
 	</column>
 	<constraint name="pk_personal_metas" type="pk-constr" table="public.personal_metas">
 		<columns names="id" ref-type="src-columns"/>
 	</constraint>
 </table>
 
-<table name="personal_documentos">
+<table name="personal_documentos" hide-ext-attribs="true">
 	<schema name="public"/>
 	<role name="postgres"/>
-	<position x="640" y="540"/>
+	<position x="840" y="260"/>
 	<column name="id" not-null="true">
-		<type name="serial"/>
+		<type name="serial" length="1"/>
 	</column>
-	<column name="fk_personal_id">
-		<type name="smallint"/>
+	<column name="personal_id">
+		<type name="smallint" length="1"/>
 	</column>
 	<column name="nombre">
-		<type name="text"/>
+		<type name="text" length="1"/>
 	</column>
 	<column name="descripcion">
-		<type name="text"/>
-	</column>
-	<column name="ubicacion_documento">
-		<type name="text"/>
+		<type name="text" length="1"/>
 	</column>
 	<column name="createdAt">
-		<type name="date"/>
+		<type name="date" length="1"/>
 	</column>
-	<column name="editedAt">
-		<type name="date"/>
+	<column name="updatedAt">
+		<type name="date" length="1"/>
 	</column>
 	<constraint name="pk_personal_documentos" type="pk-constr" table="public.personal_documentos">
 		<columns names="id" ref-type="src-columns"/>
 	</constraint>
 </table>
 
+<table name="login" hide-ext-attribs="true">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="60" y="460"/>
+	<column name="login_id" not-null="true">
+		<type name="serial" length="0"/>
+	</column>
+	<column name="username">
+		<type name="text" length="0"/>
+	</column>
+	<column name="password">
+		<type name="text" length="0"/>
+	</column>
+	<constraint name="login_pk" type="pk-constr" table="public.login">
+		<columns names="login_id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
 <constraint name="fk_asistencias" type="fk-constr" comparison-type="MATCH FULL"
-	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.personal" table="public.asistencias">
-	<columns names="fk_asistencias" ref-type="src-columns"/>
+	 upd-action="CASCADE" del-action="SET NULL" ref-table="public.personal" table="public.asistencias">
+	<columns names="personal_id" ref-type="src-columns"/>
 	<columns names="id" ref-type="dst-columns"/>
 </constraint>
 
 <constraint name="fk_personal_metas" type="fk-constr" comparison-type="MATCH FULL"
 	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.personal" table="public.personal_metas">
-	<columns names="fk_personal_metas" ref-type="src-columns"/>
+	<columns names="personal_id" ref-type="src-columns"/>
 	<columns names="id" ref-type="dst-columns"/>
 </constraint>
 
 <constraint name="fk_id_personal_documentos" type="fk-constr" comparison-type="MATCH FULL"
 	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.personal" table="public.personal_documentos">
-	<columns names="fk_personal_id" ref-type="src-columns"/>
+	<columns names="personal_id" ref-type="src-columns"/>
 	<columns names="id" ref-type="dst-columns"/>
 </constraint>
 
@@ -135,9 +156,13 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	 dst-table="public.personal"
 	 src-required="false" dst-required="false"/>
 
-<relationship name="rel_asistencias_personal" type="relfk"
+<relationship name="rel_personal_asistencias" type="relfk"
 	 src-table="public.asistencias"
 	 dst-table="public.personal"
-	 src-required="false" dst-required="false"/>
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="0" y="0"/>
+	</label>
+</relationship>
 
 </dbmodel>
