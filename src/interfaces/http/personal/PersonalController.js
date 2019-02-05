@@ -12,7 +12,7 @@ const verificarToken = require('../autorizacion/VerificarToken');
 const PersonalController = {
   get router() {
     const router = Router();
-    router.use(inject('personalPageSerializer'));
+    router.use(inject('pageSerializer'));
     router.get('/', inject('getPersonal'), this.all);
     router.post('/', inject('createPersonal'), this.create); 
     router.put('/:personal_id', inject('updatePersonal'), this.update);
@@ -58,7 +58,7 @@ const PersonalController = {
 
     const {
       getPersonal,
-      personalPageSerializer
+      pageSerializer
     } = req;
     const {
       SUCCESS,
@@ -71,7 +71,7 @@ const PersonalController = {
         usuarios.page = Number(req.query.page);
         res
           .status(Status.OK)
-          .json(personalPageSerializer.serialize(usuarios));
+          .json(pageSerializer.serialize(usuarios));
       })
       .on(ERROR, next);
 

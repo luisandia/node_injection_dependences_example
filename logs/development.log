@@ -9281,3 +9281,106 @@ Resolution path: updatePersonal
   type: 'SELECT',
   model: personal }
 [2019-02-05T16:36:54.423] [INFO] default - [0mGET /api/personal?page=0&size=20 [32m200 [0m1786.880 ms - -[0m
+[2019-02-05T16:48:04.969] [INFO] default - Executing (default): SELECT 1+1 AS result { logging: [Function: bound ],
+  plain: true,
+  raw: true,
+  type: 'SELECT' }
+[2019-02-05T16:48:04.980] [INFO] default - [p 15005] Listening at port 3000
+[2019-02-05T16:48:08.701] [ERROR] default - AwilixResolutionError: Could not resolve 'PageSerializer'.
+
+Resolution path: PageSerializer
+    at Object.resolve (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix/lib/container.js:232:23)
+    at injectDependency (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix-express/lib/inject.js:16:35)
+    at Array.reduce (<anonymous>)
+    at injectMiddleware (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix-express/lib/inject.js:9:18)
+    at Layer.handle [as handle_request] (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:317:13)
+    at /home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:174:3)
+    at router (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:317:13)
+    at /home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:275:10)
+    at scopePerRequestMiddleware (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix-express/lib/scopePerRequest.js:11:12)
+    at Layer.handle [as handle_request] (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:317:13)
+    at /home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:275:10)
+[2019-02-05T16:48:08.718] [INFO] default - [0mGET /api/personal?page=0&size=20 [31m500 [0m26.488 ms - -[0m
+[2019-02-05T16:48:55.336] [INFO] default - Executing (default): SELECT 1+1 AS result { logging: [Function: bound ],
+  plain: true,
+  raw: true,
+  type: 'SELECT' }
+[2019-02-05T16:48:55.346] [INFO] default - [p 15272] Listening at port 3000
+[2019-02-05T16:48:58.360] [ERROR] default - AwilixResolutionError: Could not resolve 'PageSerializer'.
+
+Resolution path: PageSerializer
+    at Object.resolve (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix/lib/container.js:232:23)
+    at injectDependency (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix-express/lib/inject.js:16:35)
+    at Array.reduce (<anonymous>)
+    at injectMiddleware (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix-express/lib/inject.js:9:18)
+    at Layer.handle [as handle_request] (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:317:13)
+    at /home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:174:3)
+    at router (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:317:13)
+    at /home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:275:10)
+    at scopePerRequestMiddleware (/home/lap0020-2018/Documentos/adm_personal/node_modules/awilix-express/lib/scopePerRequest.js:11:12)
+    at Layer.handle [as handle_request] (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:317:13)
+    at /home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/lap0020-2018/Documentos/adm_personal/node_modules/express/lib/router/index.js:275:10)
+[2019-02-05T16:48:58.371] [INFO] default - [0mGET /api/personal?page=0&size=20 [31m500 [0m19.051 ms - -[0m
+[2019-02-05T16:49:59.611] [INFO] default - Executing (default): SELECT 1+1 AS result { logging: [Function: bound ],
+  plain: true,
+  raw: true,
+  type: 'SELECT' }
+[2019-02-05T16:49:59.619] [INFO] default - [p 15436] Listening at port 3000
+[2019-02-05T16:50:03.649] [INFO] default - Executing (default): SELECT 1+1 AS result { logging: [Function: bound ],
+  plain: true,
+  raw: true,
+  type: 'SELECT' }
+[2019-02-05T16:50:03.661] [INFO] default - [p 15493] Listening at port 3000
+[2019-02-05T16:50:06.937] [INFO] default - Executing (default): SELECT count(*) AS "count" FROM "personal" AS "personal"; { logging: [Function: bound ],
+  plain: true,
+  raw: true,
+  limit: null,
+  offset: null,
+  hooks: true,
+  dataType: 
+   INTEGER {
+     options: { length: undefined },
+     _length: undefined,
+     _zerofill: undefined,
+     _decimals: undefined,
+     _precision: undefined,
+     _scale: undefined,
+     _unsigned: undefined },
+  includeIgnoreAttributes: false,
+  order: null,
+  attributes: [ [ [Object], 'count' ] ],
+  type: 'SELECT' }
+[2019-02-05T16:50:06.941] [INFO] default - Executing (default): SELECT "id", "nombres", "a_paterno", "a_materno" FROM "personal" AS "personal" LIMIT 20 OFFSET 0; { logging: [Function: bound ],
+  plain: false,
+  raw: false,
+  limit: 20,
+  offset: 0,
+  hooks: true,
+  rejectOnEmpty: false,
+  attributes: [ 'id', 'nombres', 'a_paterno', 'a_materno' ],
+  tableNames: [ 'personal' ],
+  type: 'SELECT',
+  model: personal }
+[2019-02-05T16:50:06.958] [INFO] default - [0mGET /api/personal?page=0&size=20 [32m200 [0m37.670 ms - -[0m

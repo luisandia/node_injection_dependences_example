@@ -1,19 +1,17 @@
-const PersonalPageSerializer = {
+const PageSerializer = {
   serialize({
-    count,
+    count,//size
     rows,
     size,
-    page,
+    page
   }) {
-    //resultados = rows;
-    numeroRecords = count;
+    resultados = rows;
+    numeroRecords = Number(rows.length);
     totalPaginas = numeroRecords == 0 ? 0 : Math.ceil(count / size);
-    resultados = rows
-    total = (size * page) + count;
     datosPage = {
       totalDatos: count,
       inicioDatos: (size * page) + 1,
-      finDatos: total>count?count:total
+      finDatos: (size * page) + numeroRecords 
     }
     return {
       resultados,
@@ -23,4 +21,4 @@ const PersonalPageSerializer = {
   }
 };
 
-module.exports = PersonalPageSerializer;
+module.exports = PageSerializer;

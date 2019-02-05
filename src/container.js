@@ -109,10 +109,10 @@ container.register({
 
 /************************* SERIALIZADORES ***************************/
 const UsuariosPageSerializer = require('./interfaces/http/usuarios/UsuariosPageSerializer');
-const PersonalPageSerializer = require('./interfaces/http/personal/PersonalPageSerializer');
+const PageSerializer = require('./utils/PageSerializer');
 container.register({
   usuariosPageSerializer: asValue(UsuariosPageSerializer),
-  personalPageSerializer: asValue(PersonalPageSerializer),
+  pageSerializer: asValue(PageSerializer),
 });
 
 
