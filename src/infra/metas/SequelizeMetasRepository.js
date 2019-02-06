@@ -89,6 +89,27 @@ class SequelizeMetasRepository {
       throw error;
     }
   }
+  async getMetasPersonal(page, size,personal_id,value) {
+    try {
+      const Personal = await this.metasModel.findAndCountAll({
+        limit: size,
+        offset: size * page,
+        where: {
+          personal_id: personal_id,
+          meta: {
+            [Op.iLike]: `%${value}%`
+          }
+        },
+        include: [{
+          model: this.personalModel,
+          required: false,
+        }]
+      });
+      return Personal;
+    } catch (error) {
+      throw error;
+    }
+  }
 
   async getRawQuery(page, size, value) {
     try {

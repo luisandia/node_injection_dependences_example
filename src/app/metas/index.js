@@ -4,4 +4,5 @@ module.exports = {
   DeleteMetas: require('./DeleteMetas'),
   GetMetas: require('./GetMetas'),
   GetMetasRawQuery: require('./GetMetasRawQuery'),
+  GetMetasPersonal: require('./GetMetasPersonal'),
 };
