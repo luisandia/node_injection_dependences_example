@@ -9384,3 +9384,38 @@ Resolution path: PageSerializer
   type: 'SELECT',
   model: personal }
 [2019-02-05T16:50:06.958] [INFO] default - [0mGET /api/personal?page=0&size=20 [32m200 [0m37.670 ms - -[0m
+[2019-02-06T06:35:17.190] [INFO] default - Executing (default): SELECT 1+1 AS result { logging: [Function: bound ],
+  plain: true,
+  raw: true,
+  type: 'SELECT' }
+[2019-02-06T06:35:17.203] [INFO] default - [p 4041] Listening at port 3000
+[2019-02-06T06:45:03.750] [INFO] default - Executing (default): SELECT 1+1 AS result { logging: [Function: bound ],
+  plain: true,
+  raw: true,
+  type: 'SELECT' }
+[2019-02-06T06:45:03.768] [INFO] default - [p 5442] Listening at port 3000
+[2019-02-06T07:23:18.216] [INFO] default - Executing (default): SELECT 1+1 AS result { logging: [Function: bound ],
+  plain: true,
+  raw: true,
+  type: 'SELECT' }
+[2019-02-06T07:23:18.230] [INFO] default - [p 10964] Listening at port 3000
+[2019-02-06T07:24:33.702] [INFO] default - Executing (default): SELECT 1+1 AS result { logging: [Function: bound ],
+  plain: true,
+  raw: true,
+  type: 'SELECT' }
+[2019-02-06T07:24:33.712] [INFO] default - [p 11143] Listening at port 3000
+[2019-02-06T07:24:35.341] [INFO] default - Executing (default): SELECT 1+1 AS result { logging: [Function: bound ],
+  plain: true,
+  raw: true,
+  type: 'SELECT' }
+[2019-02-06T07:24:35.361] [INFO] default - [p 11188] Listening at port 3000
+[2019-02-06T07:25:23.051] [INFO] default - Executing (default): SELECT 1+1 AS result { logging: [Function: bound ],
+  plain: true,
+  raw: true,
+  type: 'SELECT' }
+[2019-02-06T07:25:23.063] [INFO] default - [p 11333] Listening at port 3000
+[2019-02-06T07:25:53.965] [INFO] default - Executing (default): SELECT 1+1 AS result { logging: [Function: bound ],
+  plain: true,
+  raw: true,
+  type: 'SELECT' }
+[2019-02-06T07:25:53.976] [INFO] default - [p 11467] Listening at port 3000

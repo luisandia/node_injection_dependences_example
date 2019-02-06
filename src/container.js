@@ -66,41 +66,47 @@ container.register({
     usuariosRepository: asClass(SequelizeUsuariosRepository).singleton(),
 });
 
-/*************************** PERSONAL *****************************/
+/*************************** METAS *****************************/
 
 const {
-    CreatePersonal,
-    UpdatePersonal,
-    DeletePersonal,
-    GetPersonal
-} = require('./app/personal');
+    CreateMetas,
+    UpdateMetas,
+    DeleteMetas,
+    GetMetas
+} = require('./app/metas');
 container.register({
-    createPersonal: asClass(CreatePersonal),
-    updatePersonal: asClass(UpdatePersonal),
-    deletePersonal: asClass(DeletePersonal),
-    getPersonal: asClass(GetPersonal)
+    createMetas: asClass(CreateMetas),
+    updateMetas: asClass(UpdateMetas),
+    deleteMetas: asClass(DeleteMetas),
+    getMetas: asClass(GetMetas)
 });
+
+
+
+
+
+
+
+/*************************** DATABASE AND REPOSITORIES****************************/
 
 const SequelizePersonalRepository = require('./infra/personal/SequelizePersonalRepository');
+const SequelizeMetasRepository = require('./infra/metas/SequelizeMetasRepository');
 container.register({
     personalRepository: asClass(SequelizePersonalRepository).singleton(),
+    metasRepository: asClass(SequelizeMetasRepository).singleton(),
 });
 
-
-
-
-
-
-/*************************** DATABASE ****************************/
 const {
     database,
     Usuario: UsuarioModel,
     personal:PersonalModel,
+    personal_metas:MetasModel,
 } = require('./infra/database/models');
 container.register({
     database: asValue(database),
     UsuarioModel: asValue(UsuarioModel),
     PersonalModel: asValue(PersonalModel),
+    MetasModel: asValue(MetasModel),
 
 });
 

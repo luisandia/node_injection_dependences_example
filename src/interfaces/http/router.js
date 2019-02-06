@@ -33,6 +33,7 @@ module.exports = ({ config, containerMiddleware, loggerMiddleware, errorHandler,
   */
   apiRouter.use('/usuarios', controller('usuarios/UsuariosController'));
   apiRouter.use('/personal', controller('personal/PersonalController'));
+  apiRouter.use('/metas', controller('metas/MetasController'));
   router.use('/api', apiRouter);
 
   router.use(errorHandler);
