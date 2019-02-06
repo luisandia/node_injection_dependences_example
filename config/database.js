@@ -6,10 +6,10 @@ module.exports = {
     host: 'localhost',
     dialect: 'postgres',
     pool: {
-            max:50,
-            min:20,
-            idle:15000
-          }
+      max: 50,
+      min: 20,
+      idle: 15000
+    }
   },
   test: {
     username: 'postgres',

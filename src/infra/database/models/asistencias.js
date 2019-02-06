@@ -8,14 +8,6 @@ module.exports = function(sequelize, DataTypes) {
       primaryKey: true,
       autoIncrement: true
     },
-    personal_id: {
-      type: DataTypes.INTEGER,
-      allowNull: true,
-      references: {
-        model: 'personal',
-        key: 'id'
-      }
-    },
     nombre: {
       type: DataTypes.TEXT,
       allowNull: true

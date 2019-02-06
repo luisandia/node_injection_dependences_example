@@ -8,7 +8,7 @@ class GetPersonal extends Operation {
     this.personalRepository = personalRepository;
   }
 
-  async execute(page,size) {
+  async execute(page, size) {
     const {
       SUCCESS,
       NOT_FOUND,
@@ -17,7 +17,7 @@ class GetPersonal extends Operation {
     } = this.outputs;
 
     try {
-      const personal = await this.personalRepository.getPersonal(page,size);
+      const personal = await this.personalRepository.getPersonal(page, size);
       this.emit(SUCCESS, personal);
     } catch (error) {
       switch (error.message) {

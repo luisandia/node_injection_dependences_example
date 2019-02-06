@@ -8,7 +8,7 @@ class GetPersonal extends Operation {
     this.metasRepository = metasRepository;
   }
 
-  async execute(page,size) {
+  async execute(page, size,value) {
     const {
       SUCCESS,
       NOT_FOUND,
@@ -17,7 +17,7 @@ class GetPersonal extends Operation {
     } = this.outputs;
 
     try {
-      const metas = await this.metasRepository.get(page,size);
+      const metas = await this.metasRepository.get(page, size,value);
       this.emit(SUCCESS, metas);
     } catch (error) {
       switch (error.message) {

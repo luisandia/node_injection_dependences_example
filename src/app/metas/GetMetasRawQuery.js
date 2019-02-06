@@ -1,14 +1,14 @@
 const Operation = require('src/app/Operation');
 
-class UpdatePersonal extends Operation {
+class GetMetasRawQuery extends Operation {
   constructor({
-    personalRepository
+    metasRepository
   }) {
     super();
-    this.personalRepository = personalRepository;
+    this.metasRepository = metasRepository;
   }
 
-  async execute(params, usuario) {
+  async execute(page, size,value) {
     const {
       SUCCESS,
       NOT_FOUND,
@@ -17,8 +17,8 @@ class UpdatePersonal extends Operation {
     } = this.outputs;
 
     try {
-      const contacto = await this.personalRepository.updatePersonal(params.personal_id, usuario);
-      this.emit(SUCCESS, contacto);
+      const metas = await this.metasRepository.getRawQuery(page, size,value);
+      this.emit(SUCCESS, metas);
     } catch (error) {
       switch (error.message) {
         case 'ValidationError':
@@ -32,6 +32,6 @@ class UpdatePersonal extends Operation {
   }
 }
 
-UpdatePersonal.setOutputs(['SUCCESS', 'NOT_FOUND', 'VALIDATION_ERROR', 'ERROR']);
+GetMetasRawQuery.setOutputs(['SUCCESS', 'NOT_FOUND', 'VALIDATION_ERROR', 'ERROR']);
 
-module.exports = UpdatePersonal;
+module.exports = GetMetasRawQuery;

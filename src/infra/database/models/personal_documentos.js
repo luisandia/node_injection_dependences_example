@@ -10,7 +10,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     personal_id: {
       type: DataTypes.INTEGER,
-      allowNull: true,
+      allowNull: false,
       references: {
         model: 'personal',
         key: 'id'

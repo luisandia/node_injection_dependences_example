@@ -72,13 +72,30 @@ const {
     CreateMetas,
     UpdateMetas,
     DeleteMetas,
-    GetMetas
+    GetMetas,
+    GetMetasRawQuery
 } = require('./app/metas');
 container.register({
     createMetas: asClass(CreateMetas),
     updateMetas: asClass(UpdateMetas),
     deleteMetas: asClass(DeleteMetas),
-    getMetas: asClass(GetMetas)
+    getMetas: asClass(GetMetas),
+    getMetasRawQuery: asClass(GetMetasRawQuery)
+});
+
+/*************************** PERSONAL *****************************/
+
+const {
+    CreatePersonal,
+    UpdatePersonal,
+    DeletePersonal,
+    GetPersonal
+} = require('./app/personal');
+container.register({
+    createPersonal: asClass(CreatePersonal),
+    updatePersonal: asClass(UpdatePersonal),
+    deletePersonal: asClass(DeletePersonal),
+    getPersonal: asClass(GetPersonal)
 });
 
 
@@ -116,9 +133,11 @@ container.register({
 /************************* SERIALIZADORES ***************************/
 const UsuariosPageSerializer = require('./interfaces/http/usuarios/UsuariosPageSerializer');
 const PageSerializer = require('./utils/PageSerializer');
+const PageSerializerRawQuery = require('./utils/PageSerializerRawQuery');
 container.register({
   usuariosPageSerializer: asValue(UsuariosPageSerializer),
   pageSerializer: asValue(PageSerializer),
+  pageSerializerRawQuery: asValue(PageSerializerRawQuery),
 });
 
 

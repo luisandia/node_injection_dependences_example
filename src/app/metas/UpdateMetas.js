@@ -8,7 +8,7 @@ class UpdateMetas extends Operation {
     this.metasRepository = metasRepository;
   }
 
-  async execute(params,meta) {
+  async execute(params, meta) {
     const {
       SUCCESS,
       NOT_FOUND,
@@ -17,7 +17,7 @@ class UpdateMetas extends Operation {
     } = this.outputs;
 
     try {
-      const contacto = await this.metasRepository.update(params.metas_id,meta);
+      const contacto = await this.metasRepository.update(params.metas_id, meta);
       this.emit(SUCCESS, contacto);
     } catch (error) {
       switch (error.message) {

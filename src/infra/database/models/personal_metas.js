@@ -1,7 +1,7 @@
 /* jshint indent: 2 */
 
-module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('personal_metas', {
+module.exports = function (sequelize, DataTypes) {
+  const personal_metas = sequelize.define('personal_metas', {
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -10,7 +10,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     personal_id: {
       type: DataTypes.INTEGER,
-      allowNull: true,
+      allowNull: false,
       references: {
         model: 'personal',
         key: 'id'
@@ -29,6 +29,21 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     }
   }, {
-    tableName: 'personal_metas'
+    timestamps: false,
+    freezeTableName: true
+  }, 
+  {
+    tableName: 'personal_metas',
+    timestamps: false,
+    freezeTableName: true 
   });
+  personal_metas.belongsTo(sequelize.models.personal, {
+    foreignKey: 'personal_id',
+    targetKey: 'id'
+  });
+  sequelize.models.personal.hasMany(sequelize.models.personal_metas, {
+    foreignKey: 'personal_id',
+    sourceKey: 'id'
+  });
+  return personal_metas;
 };
