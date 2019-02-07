@@ -74,7 +74,8 @@ const {
     DeleteMetas,
     GetMetas,
     GetMetasRawQuery,
-    GetMetasPersonal
+    GetMetasPersonal,
+    GetMetaPersonal
 } = require('./app/metas');
 container.register({
     createMetas: asClass(CreateMetas),
@@ -82,7 +83,8 @@ container.register({
     deleteMetas: asClass(DeleteMetas),
     getMetas: asClass(GetMetas),
     getMetasRawQuery: asClass(GetMetasRawQuery),
-    getMetasPersonal: asClass(GetMetasPersonal)
+    getMetasPersonal: asClass(GetMetasPersonal),
+    getMetaPersonal: asClass(GetMetaPersonal)
 });
 
 /*************************** PERSONAL *****************************/

@@ -33,31 +33,34 @@ class SequelizeMetasRepository {
   }
 
 
-  async update(metas_id, newData) {
+  async update(personal_id,metas_id, newData) {
+
     const transaction = await this.metasModel.sequelize.transaction();
     try {
-      const updatedUsuario = await this.metasModel.update(newData, {
+      const updatedMeta = await this.metasModel.update(newData, {
         where: {
-          id: metas_id
+          id: metas_id,
+          personal_id:personal_id
         }
       }, {
         transaction
       });
       await transaction.commit();
 
-      return updatedUsuario;
+      return updatedMeta;
     } catch (error) {
       await transaction.rollback();
 
       throw error;
     }
   }
-  async delete(metas_id) {
+  async delete(personal_id,metas_id) {
     const transaction = await this.metasModel.sequelize.transaction();
     try {
       const deleteUsuario = await this.metasModel.destroy({
         where: {
-          id: metas_id
+          id: metas_id,
+          personal_id: personal_id
         }
       }, {
         transaction
@@ -110,6 +113,23 @@ class SequelizeMetasRepository {
       throw error;
     }
   }
+  async getMetaPersonal(personal_id,metas_id) {
+    try {
+      const Personal = await this.metasModel.findOne({
+        where: {
+          personal_id: personal_id,
+          id:metas_id
+        },
+        include: [{
+          model: this.personalModel,
+          required: false,
+        }]
+      });
+      return Personal;
+    } catch (error) {
+      throw error;
+    }
+  }
 
   async getRawQuery(page, size, value) {
     try {
@@ -118,7 +138,7 @@ class SequelizeMetasRepository {
       select pm.*,p.nombres || ' ' || p.a_paterno || ' ' || p.a_materno as nombre ,row_number() over (partition by personal_id order by fecha_prevista desc) as row_number 
       from personal_metas pm
       inner join personal p
-      on p.id = pm.personal_id 
+      on p.id = pm.personal_id
       where p.nombres ilike '%${value}%' ) as T
       where row_number=1
       limit ${size} offset ${size*page}

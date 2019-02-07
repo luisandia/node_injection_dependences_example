@@ -1,6 +1,6 @@
 const Operation = require('src/app/Operation');
 
-class UpdateMetas extends Operation {
+class GetMetaPersonal extends Operation {
   constructor({
     metasRepository
   }) {
@@ -8,7 +8,7 @@ class UpdateMetas extends Operation {
     this.metasRepository = metasRepository;
   }
 
-  async execute(params, meta) {
+  async execute(params) {
     const {
       SUCCESS,
       NOT_FOUND,
@@ -17,8 +17,8 @@ class UpdateMetas extends Operation {
     } = this.outputs;
 
     try {
-      const contacto = await this.metasRepository.update(params.personal_id,params.metas_id, meta);
-      this.emit(SUCCESS, contacto);
+      const metas = await this.metasRepository.getMetaPersonal(params.personal_id, params.meta_id);
+      this.emit(SUCCESS, metas);
     } catch (error) {
       switch (error.message) {
         case 'ValidationError':
@@ -32,6 +32,6 @@ class UpdateMetas extends Operation {
   }
 }
 
-UpdateMetas.setOutputs(['SUCCESS', 'NOT_FOUND', 'VALIDATION_ERROR', 'ERROR']);
+GetMetaPersonal.setOutputs(['SUCCESS', 'NOT_FOUND', 'VALIDATION_ERROR', 'ERROR']);
 
-module.exports = UpdateMetas;
+module.exports = GetMetaPersonal;

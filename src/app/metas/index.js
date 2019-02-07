@@ -5,4 +5,5 @@ module.exports = {
   GetMetas: require('./GetMetas'),
   GetMetasRawQuery: require('./GetMetasRawQuery'),
   GetMetasPersonal: require('./GetMetasPersonal'),
+  GetMetaPersonal: require('./GetMetaPersonal'),
 };

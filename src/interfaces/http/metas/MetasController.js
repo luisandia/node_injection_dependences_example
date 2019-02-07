@@ -16,9 +16,10 @@ const MetasController = {
     router.use(inject('pageSerializerRawQuery'));
     router.get('/', inject('getMetasRawQuery'), this.allRawQuery);
     router.get('/:personal_id', inject('getMetasPersonal'), this.getMetasPersonal);
+    router.get('/:personal_id/:meta_id', inject('getMetaPersonal'), this.getMetaPersonal);
     router.post('/', inject('createMetas'), this.create);
-    router.put('/:metas_id', inject('updateMetas'), this.update);
-    router.delete('/:metas_id', inject('deleteMetas'), this.delete);
+    router.put('/:personal_id/:metas_id', inject('updateMetas'), this.update);
+    router.delete('/:personal_id/:metas_id', inject('deleteMetas'), this.delete);
 
     return router;
   },
@@ -201,6 +202,25 @@ const MetasController = {
       .on(ERROR, next);
     req.query.personal_id = req.params.personal_id
     getMetasPersonal.execute(req.query);
+  },
+  getMetaPersonal(req, res, next) {
+    const {
+      getMetaPersonal,
+      pageSerializer,
+    } = req;
+    const {
+      SUCCESS,
+      ERROR
+    } = getMetaPersonal.outputs;
+
+    getMetaPersonal
+      .on(SUCCESS, (usuarios) => {
+        res
+          .status(Status.OK)
+          .json(usuarios);
+      })
+      .on(ERROR, next);
+    getMetaPersonal.execute(req.params);
   }
 };
 

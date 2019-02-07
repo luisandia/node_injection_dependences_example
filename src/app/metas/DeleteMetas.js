@@ -17,7 +17,7 @@ class DeleteMetas extends Operation {
     } = this.outputs;
 
     try {
-      const contacto = await this.metasRepository.delete(params.metas_id);
+      const contacto = await this.metasRepository.delete(params.personal_id,params.metas_id);
       this.emit(SUCCESS, contacto);
     } catch (error) {
       switch (error.message) {
