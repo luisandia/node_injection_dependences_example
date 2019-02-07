@@ -9,18 +9,15 @@ const Status = require('http-status');
 const Globals = require('src/utils/Globals');
 const verificarToken = require('../autorizacion/VerificarToken');
 
-const MetasController = {
+const DocumentoController = {
   get router() {
     const router = Router();
     router.use(inject('pageSerializer'));
-    router.use(inject('pageSerializerRawQuery'));
-    router.get('/', inject('getMetasRawQuery'), this.allRawQuery);
-    router.get('/:personal_id', inject('getMetasPersonal'), this.getMetasPersonal);
-    router.get('/:personal_id/:meta_id', inject('getMetaPersonal'), this.getMetaPersonal);
-    router.post('/', inject('createMetas'), this.create);
-    router.put('/:personal_id/:metas_id', inject('updateMetas'), this.update);
-    router.delete('/:personal_id/:metas_id', inject('deleteMetas'), this.delete);
-
+    router.get('/', inject('getDocumento'), this.all);
+    router.get('/:documento_id', inject('getDocumentoById'), this.get);
+    router.post('/', inject('createDocumento'), this.create);
+    router.put('/:documento_id', inject('updateDocumento'), this.update);
+    router.delete('/:documento_id', inject('deleteDocumento'), this.delete);
     return router;
   },
 
@@ -28,14 +25,14 @@ const MetasController = {
     console.log("create user");
 
     const {
-      createMetas
+      createDocumento
     } = req;
     const {
       SUCCESS,
       ERROR,
       VALIDATION_ERROR
-    } = createMetas.outputs;
-    createMetas
+    } = createDocumento.outputs;
+    createDocumento
       .on(SUCCESS, (usuario) => {
         res.status(Status.CREATED)
           .json({
@@ -52,64 +49,54 @@ const MetasController = {
         });
       })
       .on(ERROR, next);
-  
-    createMetas.execute(req.body);
-
+    createDocumento.execute(req.body);
   },
   all(req, res, next) {
     const {
-      getMetas,
-      pageSerializer,
+      getDocumento,
+      pageSerializer
     } = req;
     const {
       SUCCESS,
       ERROR
-    } = getMetas.outputs;
+    } = getDocumento.outputs;
 
-    getMetas
+    getDocumento
       .on(SUCCESS, (usuarios) => {
         usuarios.size = Number(req.query.size);
         usuarios.page = Number(req.query.page);
         res
           .status(Status.OK)
-          .json(
-            pageSerializer.serialize(usuarios)
-          );
-
+          .json(pageSerializer.serialize(usuarios));
       })
       .on(ERROR, next);
 
-    getMetas.execute(Number(req.query.page), Number(req.query.size), (req.query.value));
+    getDocumento.execute(Number(req.query.page), Number(req.query.size));
   },
-  allRawQuery(req, res, next) {
+  get(req, res, next) {
+
     const {
-      getMetasRawQuery,
-      pageSerializerRawQuery
+      getDocumentoById
     } = req;
     const {
       SUCCESS,
       ERROR
-    } = getMetasRawQuery.outputs;
+    } = getDocumentoById.outputs;
 
-    getMetasRawQuery
+    getDocumentoById
       .on(SUCCESS, (usuarios) => {
-        usuarios.size = Number(req.query.size);
-        usuarios.page = Number(req.query.page);
         res
           .status(Status.OK)
-          .json(
-            pageSerializerRawQuery.serialize(usuarios, req.query.page, req.query.size)
-          );
-
+          .json(usuarios);
       })
       .on(ERROR, next);
 
-    getMetasRawQuery.execute(Number(req.query.page), Number(req.query.size), (req.query.value));
+    getDocumentoById.execute(req.params);
   },
 
   update(req, res, next) {
     const {
-      updateMetas,
+      updateDocumento,
       // usuarioSerializer
     } = req;
     const {
@@ -117,9 +104,9 @@ const MetasController = {
       ERROR,
       NOT_FOUND,
       VALIDATION_ERROR
-    } = updateMetas.outputs;
+    } = updateDocumento.outputs;
 
-    updateMetas
+    updateDocumento
       .on(SUCCESS, (usuario) => {
         res
           .status(Status.ACCEPTED)
@@ -144,20 +131,20 @@ const MetasController = {
       })
       .on(ERROR, next);
 
-    updateMetas.execute(req.params, req.body);
+    updateDocumento.execute(req.params, req.body);
   },
 
   delete(req, res, next) {
     const {
-      deleteMetas
+      deleteDocumento
     } = req;
     const {
       SUCCESS,
       ERROR,
       NOT_FOUND
-    } = deleteMetas.outputs;
+    } = deleteDocumento.outputs;
 
-    deleteMetas
+    deleteDocumento
       .on(SUCCESS, (rpta) => {
         res
           .status(Status.OK)
@@ -176,52 +163,8 @@ const MetasController = {
       })
       .on(ERROR, next);
 
-    deleteMetas.execute(req.params);
+    deleteDocumento.execute(req.params);
   },
-  getMetasPersonal(req, res, next) {
-    const {
-      getMetasPersonal,
-      pageSerializer,
-    } = req;
-    const {
-      SUCCESS,
-      ERROR
-    } = getMetasPersonal.outputs;
-
-    getMetasPersonal
-      .on(SUCCESS, (usuarios) => {
-        usuarios.size = Number(req.query.size);
-        usuarios.page = Number(req.query.page);
-        res
-          .status(Status.OK)
-          .json(
-            pageSerializer.serialize(usuarios)
-          );
-
-      })
-      .on(ERROR, next);
-    req.query.personal_id = req.params.personal_id
-    getMetasPersonal.execute(req.query);
-  },
-  getMetaPersonal(req, res, next) {
-    const {
-      getMetaPersonal,
-      pageSerializer,
-    } = req;
-    const {
-      SUCCESS,
-      ERROR
-    } = getMetaPersonal.outputs;
-
-    getMetaPersonal
-      .on(SUCCESS, (usuarios) => {
-        res
-          .status(Status.OK)
-          .json(usuarios);
-      })
-      .on(ERROR, next);
-    getMetaPersonal.execute(req.params);
-  }
 };
 
-module.exports = MetasController;
+module.exports = DocumentoController;

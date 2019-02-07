@@ -170,6 +170,18 @@ class SequelizeUsuariosRepository {
       throw error;
     }
   }
+  async get(personal_id) {
+    try {
+      const Personal = await this.personalModel.findOne({
+        where:{
+          id:personal_id
+        }
+      });
+      return Personal;
+    } catch (error) {
+      throw error;
+    }
+  }
 
 
   //     if (usuarioIdCorreo != Globals.MORE_THAN_ONE) {

@@ -1,7 +1,7 @@
 /* jshint indent: 2 */
 
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('personal_documentos', {
+  const personal_documentos= sequelize.define('personal_documentos', {
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -35,4 +35,14 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     tableName: 'personal_documentos'
   });
+
+  personal_documentos.belongsTo(sequelize.models.personal, {
+    foreignKey: 'personal_id',
+    targetKey: 'id'
+  });
+  sequelize.models.personal.hasMany(sequelize.models.personal_documentos, {
+    foreignKey: 'personal_id',
+    sourceKey: 'id'
+  });
+  return personal_documentos
 };

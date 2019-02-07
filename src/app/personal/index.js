@@ -3,4 +3,5 @@ module.exports = {
   UpdatePersonal: require('./UpdatePersonal'),
   DeletePersonal: require('./DeletePersonal'),
   GetPersonal: require('./GetPersonal'),
+  GetPersonalById: require('./GetPersonalById'),
 };

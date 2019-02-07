@@ -14,7 +14,8 @@ const PersonalController = {
     const router = Router();
     router.use(inject('pageSerializer'));
     router.get('/', inject('getPersonal'), this.all);
-    router.post('/', inject('createPersonal'), this.create); 
+    router.get('/:personal_id', inject('getPersonalById'), this.get);
+    router.post('/', inject('createPersonal'), this.create);
     router.put('/:personal_id', inject('updatePersonal'), this.update);
     router.delete('/:personal_id', inject('deletePersonal'), this.delete);
 
@@ -76,6 +77,26 @@ const PersonalController = {
       .on(ERROR, next);
 
     getPersonal.execute(Number(req.query.page), Number(req.query.size));
+  },
+  get(req, res, next) {
+
+    const {
+      getPersonalById
+    } = req;
+    const {
+      SUCCESS,
+      ERROR
+    } = getPersonalById.outputs;
+
+    getPersonalById
+      .on(SUCCESS, (usuarios) => {
+        res
+          .status(Status.OK)
+          .json(usuarios);
+      })
+      .on(ERROR, next);
+
+    getPersonalById.execute(req.params);
   },
 
   update(req, res, next) {
@@ -149,6 +170,8 @@ const PersonalController = {
 
     deletePersonal.execute(req.params);
   },
+
+
 };
 
 module.exports = PersonalController;

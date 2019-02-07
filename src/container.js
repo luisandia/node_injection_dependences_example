@@ -67,7 +67,6 @@ container.register({
 });
 
 /*************************** METAS *****************************/
-
 const {
     CreateMetas,
     UpdateMetas,
@@ -87,19 +86,43 @@ container.register({
     getMetaPersonal: asClass(GetMetaPersonal)
 });
 
+
+/*************************** DOCUMENTOS *****************************/
+const {
+  CreateDocumento,
+  // UpdateMetas,
+  // DeleteMetas,
+  // GetMetas,
+  // GetMetasRawQuery,
+  // GetMetasPersonal,
+  // GetMetaPersonal
+} = require('./app/documentos');
+container.register({
+  createDocumento: asClass(CreateDocumento),
+  // updateMetas: asClass(UpdateMetas),
+  // deleteMetas: asClass(DeleteMetas),
+  // getMetas: asClass(GetMetas),
+  // getMetasRawQuery: asClass(GetMetasRawQuery),
+  // getMetasPersonal: asClass(GetMetasPersonal),
+  // getMetaPersonal: asClass(GetMetaPersonal)
+});
+
+
 /*************************** PERSONAL *****************************/
 
 const {
     CreatePersonal,
     UpdatePersonal,
     DeletePersonal,
-    GetPersonal
+    GetPersonal,
+    GetPersonalById,
 } = require('./app/personal');
 container.register({
     createPersonal: asClass(CreatePersonal),
     updatePersonal: asClass(UpdatePersonal),
     deletePersonal: asClass(DeletePersonal),
-    getPersonal: asClass(GetPersonal)
+    getPersonal: asClass(GetPersonal),
+    getPersonalById: asClass(GetPersonalById)
 });
 
 
@@ -122,12 +145,14 @@ const {
     Usuario: UsuarioModel,
     personal:PersonalModel,
     personal_metas:MetasModel,
+    personal_documentos:DocumentoModel
 } = require('./infra/database/models');
 container.register({
     database: asValue(database),
     UsuarioModel: asValue(UsuarioModel),
     PersonalModel: asValue(PersonalModel),
     MetasModel: asValue(MetasModel),
+    DocumentoModel: asValue(DocumentoModel),
 
 });
 
