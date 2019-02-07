@@ -13,11 +13,14 @@ const DocumentoController = {
   get router() {
     const router = Router();
     router.use(inject('pageSerializer'));
-    router.get('/', inject('getDocumento'), this.all);
-    router.get('/:documento_id', inject('getDocumentoById'), this.get);
+    router.use(inject('pageSerializerRawQuery'));
     router.post('/', inject('createDocumento'), this.create);
-    router.put('/:documento_id', inject('updateDocumento'), this.update);
-    router.delete('/:documento_id', inject('deleteDocumento'), this.delete);
+    router.get('/', inject('getDocumentoRawQuery'), this.allRawQuery);
+    router.put('/:personal_id/:documento_id', inject('updateDocumento'), this.update);
+    router.delete('/:personal_id/:documento_id', inject('deleteDocumento'), this.delete);
+    // router.get('/:personal_id', inject('getDocumentoPersonal'), this.getDocumentoPersonal);
+    // router.get('/:personal_id/:documento_id', inject('getMetaPersonal'), this.getMetaPersonal);
+
     return router;
   },
 
@@ -49,12 +52,14 @@ const DocumentoController = {
         });
       })
       .on(ERROR, next);
+  
     createDocumento.execute(req.body);
+
   },
   all(req, res, next) {
     const {
       getDocumento,
-      pageSerializer
+      pageSerializer,
     } = req;
     const {
       SUCCESS,
@@ -67,31 +72,39 @@ const DocumentoController = {
         usuarios.page = Number(req.query.page);
         res
           .status(Status.OK)
-          .json(pageSerializer.serialize(usuarios));
+          .json(
+            pageSerializer.serialize(usuarios)
+          );
+
       })
       .on(ERROR, next);
 
-    getDocumento.execute(Number(req.query.page), Number(req.query.size));
+    getDocumento.execute(Number(req.query.page), Number(req.query.size), (req.query.value));
   },
-  get(req, res, next) {
-
+  allRawQuery(req, res, next) {
     const {
-      getDocumentoById
+      getDocumentoRawQuery,
+      pageSerializerRawQuery
     } = req;
     const {
       SUCCESS,
       ERROR
-    } = getDocumentoById.outputs;
+    } = getDocumentoRawQuery.outputs;
 
-    getDocumentoById
+    getDocumentoRawQuery
       .on(SUCCESS, (usuarios) => {
+        usuarios.size = Number(req.query.size);
+        usuarios.page = Number(req.query.page);
         res
           .status(Status.OK)
-          .json(usuarios);
+          .json(
+            pageSerializerRawQuery.serialize(usuarios, req.query.page, req.query.size)
+          );
+
       })
       .on(ERROR, next);
 
-    getDocumentoById.execute(req.params);
+    getDocumentoRawQuery.execute(Number(req.query.page), Number(req.query.size), (req.query.value));
   },
 
   update(req, res, next) {
@@ -165,6 +178,50 @@ const DocumentoController = {
 
     deleteDocumento.execute(req.params);
   },
+  getDocumentoPersonal(req, res, next) {
+    const {
+      getDocumentoPersonal,
+      pageSerializer,
+    } = req;
+    const {
+      SUCCESS,
+      ERROR
+    } = getDocumentoPersonal.outputs;
+
+    getDocumentoPersonal
+      .on(SUCCESS, (usuarios) => {
+        usuarios.size = Number(req.query.size);
+        usuarios.page = Number(req.query.page);
+        res
+          .status(Status.OK)
+          .json(
+            pageSerializer.serialize(usuarios)
+          );
+
+      })
+      .on(ERROR, next);
+    req.query.personal_id = req.params.personal_id
+    getDocumentoPersonal.execute(req.query);
+  },
+  getMetaPersonal(req, res, next) {
+    const {
+      getMetaPersonal,
+      pageSerializer,
+    } = req;
+    const {
+      SUCCESS,
+      ERROR
+    } = getMetaPersonal.outputs;
+
+    getMetaPersonal
+      .on(SUCCESS, (usuarios) => {
+        res
+          .status(Status.OK)
+          .json(usuarios);
+      })
+      .on(ERROR, next);
+    getMetaPersonal.execute(req.params);
+  }
 };
 
 module.exports = DocumentoController;

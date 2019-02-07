@@ -34,6 +34,7 @@ module.exports = ({ config, containerMiddleware, loggerMiddleware, errorHandler,
   apiRouter.use('/usuarios', controller('usuarios/UsuariosController'));
   apiRouter.use('/personal', controller('personal/PersonalController'));
   apiRouter.use('/metas', controller('metas/MetasController'));
+  apiRouter.use('/documentos', controller('documentos/DocumentoController'));
   router.use('/api', apiRouter);
 
   router.use(errorHandler);

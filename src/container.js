@@ -1,11 +1,11 @@
 const {
-    createContainer,
-    asClass,
-    asFunction,
-    asValue
+  createContainer,
+  asClass,
+  asFunction,
+  asValue
 } = require('awilix');
 const {
-    scopePerRequest
+  scopePerRequest
 } = require('awilix-express');
 const config = require('../config');
 const Application = require('./app/Application');
@@ -27,83 +27,83 @@ const container = createContainer();
 
 // System
 container
-    .register({
-        app: asClass(Application).singleton(),
-        server: asClass(Server).singleton()
-    })
-    .register({
-        router: asFunction(router).singleton(),
-        logger: asFunction(logger).singleton()
-    })
-    .register({
-        config: asValue(config)
-    });
+  .register({
+    app: asClass(Application).singleton(),
+    server: asClass(Server).singleton()
+  })
+  .register({
+    router: asFunction(router).singleton(),
+    logger: asFunction(logger).singleton()
+  })
+  .register({
+    config: asValue(config)
+  });
 
 
 // Middlewares
 container
-    .register({
-        loggerMiddleware: asFunction(loggerMiddleware).singleton()
-    })
-    .register({
-        containerMiddleware: asValue(scopePerRequest(container)),
-        errorHandler: asValue(config.production ? errorHandler : devErrorHandler),
-        swaggerMiddleware: asValue([swaggerMiddleware])
-    });
+  .register({
+    loggerMiddleware: asFunction(loggerMiddleware).singleton()
+  })
+  .register({
+    containerMiddleware: asValue(scopePerRequest(container)),
+    errorHandler: asValue(config.production ? errorHandler : devErrorHandler),
+    swaggerMiddleware: asValue([swaggerMiddleware])
+  });
 
 /***************************  USUARIO  *******************************/
 const {
-    CreateUsuario,
-    GetAllUsuarios
+  CreateUsuario,
+  GetAllUsuarios
 } = require('./app/usuario');
 container.register({
-    createUsuario: asClass(CreateUsuario),
-    getAllUsuarios: asClass(GetAllUsuarios),
+  createUsuario: asClass(CreateUsuario),
+  getAllUsuarios: asClass(GetAllUsuarios),
 });
 
 const SequelizeUsuariosRepository = require('./infra/usuario/SequelizeUsuariosRepository');
 container.register({
-    usuariosRepository: asClass(SequelizeUsuariosRepository).singleton(),
+  usuariosRepository: asClass(SequelizeUsuariosRepository).singleton(),
 });
 
 /*************************** METAS *****************************/
 const {
-    CreateMetas,
-    UpdateMetas,
-    DeleteMetas,
-    GetMetas,
-    GetMetasRawQuery,
-    GetMetasPersonal,
-    GetMetaPersonal
+  CreateMetas,
+  UpdateMetas,
+  DeleteMetas,
+  GetMetas,
+  GetMetasRawQuery,
+  GetMetasPersonal,
+  GetMetaPersonal
 } = require('./app/metas');
 container.register({
-    createMetas: asClass(CreateMetas),
-    updateMetas: asClass(UpdateMetas),
-    deleteMetas: asClass(DeleteMetas),
-    getMetas: asClass(GetMetas),
-    getMetasRawQuery: asClass(GetMetasRawQuery),
-    getMetasPersonal: asClass(GetMetasPersonal),
-    getMetaPersonal: asClass(GetMetaPersonal)
+  createMetas: asClass(CreateMetas),
+  updateMetas: asClass(UpdateMetas),
+  deleteMetas: asClass(DeleteMetas),
+  getMetas: asClass(GetMetas),
+  getMetasRawQuery: asClass(GetMetasRawQuery),
+  getMetasPersonal: asClass(GetMetasPersonal),
+  getMetaPersonal: asClass(GetMetaPersonal)
 });
 
 
 /*************************** DOCUMENTOS *****************************/
 const {
   CreateDocumento,
-  // UpdateMetas,
-  // DeleteMetas,
-  // GetMetas,
-  // GetMetasRawQuery,
-  // GetMetasPersonal,
+  UpdateDocumento,
+  DeleteDocumento,
+  GetDocumento,
+  GetDocumentoRawQuery,
+  // GetDocumentoPersonal,
   // GetMetaPersonal
 } = require('./app/documentos');
 container.register({
   createDocumento: asClass(CreateDocumento),
-  // updateMetas: asClass(UpdateMetas),
-  // deleteMetas: asClass(DeleteMetas),
-  // getMetas: asClass(GetMetas),
-  // getMetasRawQuery: asClass(GetMetasRawQuery),
-  // getMetasPersonal: asClass(GetMetasPersonal),
+  updateDocumento: asClass(UpdateDocumento),
+  deleteDocumento: asClass(DeleteDocumento),
+  getDocumento: asClass(GetDocumento),
+  getDocumentoRawQuery: asClass(GetDocumentoRawQuery),
+  // getDocumentoPersonal: asClass(GetDocumentoPersonal),
   // getMetaPersonal: asClass(GetMetaPersonal)
 });
 
@@ -111,18 +111,18 @@ container.register({
 /*************************** PERSONAL *****************************/
 
 const {
-    CreatePersonal,
-    UpdatePersonal,
-    DeletePersonal,
-    GetPersonal,
-    GetPersonalById,
+  CreatePersonal,
+  UpdatePersonal,
+  DeletePersonal,
+  GetPersonal,
+  GetPersonalById,
 } = require('./app/personal');
 container.register({
-    createPersonal: asClass(CreatePersonal),
-    updatePersonal: asClass(UpdatePersonal),
-    deletePersonal: asClass(DeletePersonal),
-    getPersonal: asClass(GetPersonal),
-    getPersonalById: asClass(GetPersonalById)
+  createPersonal: asClass(CreatePersonal),
+  updatePersonal: asClass(UpdatePersonal),
+  deletePersonal: asClass(DeletePersonal),
+  getPersonal: asClass(GetPersonal),
+  getPersonalById: asClass(GetPersonalById)
 });
 
 
@@ -135,24 +135,26 @@ container.register({
 
 const SequelizePersonalRepository = require('./infra/personal/SequelizePersonalRepository');
 const SequelizeMetasRepository = require('./infra/metas/SequelizeMetasRepository');
+const SequelizeDocumentoRepository = require('./infra/documentos/SequelizeDocumentoRepository');
 container.register({
-    personalRepository: asClass(SequelizePersonalRepository).singleton(),
-    metasRepository: asClass(SequelizeMetasRepository).singleton(),
+  personalRepository: asClass(SequelizePersonalRepository).singleton(),
+  metasRepository: asClass(SequelizeMetasRepository).singleton(),
+  documentoRepository: asClass(SequelizeDocumentoRepository).singleton(),
 });
 
 const {
-    database,
-    Usuario: UsuarioModel,
-    personal:PersonalModel,
-    personal_metas:MetasModel,
-    personal_documentos:DocumentoModel
+  database,
+  Usuario: UsuarioModel,
+  personal: PersonalModel,
+  personal_metas: MetasModel,
+  personal_documentos: DocumentoModel
 } = require('./infra/database/models');
 container.register({
-    database: asValue(database),
-    UsuarioModel: asValue(UsuarioModel),
-    PersonalModel: asValue(PersonalModel),
-    MetasModel: asValue(MetasModel),
-    DocumentoModel: asValue(DocumentoModel),
+  database: asValue(database),
+  UsuarioModel: asValue(UsuarioModel),
+  PersonalModel: asValue(PersonalModel),
+  MetasModel: asValue(MetasModel),
+  DocumentoModel: asValue(DocumentoModel),
 
 });
 

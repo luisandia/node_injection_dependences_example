@@ -3,18 +3,23 @@
 // const Globals = require('src/utils/Globals');
 // const CompleteUsuarioMapper = require('./SequelizeCompleteUsuarioMapper');
 // const bcrypt = require('bcryptjs');
-
+var Sequelize = require('sequelize');
+const Op = Sequelize.Op;
 class SequelizeDocumentoRepository {
   constructor({
-    DocumentoModel
+    DocumentoModel,
+    PersonalModel,
+    database
   }) {
     this.documentoModel = DocumentoModel;
+    this.personalModel = PersonalModel;
+    this.database = database
+
   }
 
   async create(datos) {
     try {
       const result = await this.documentoModel.create(datos);
-      //   const usuario = await this.documentoModel.findById(newUsuarioId)
       return result;
     } catch (error) {
       if (error.name === 'SequelizeEmptyResultError') {
@@ -25,31 +30,36 @@ class SequelizeDocumentoRepository {
       throw error;
     }
   }
-  async update(personal_id, newData) {
+
+
+  async update(personal_id,metas_id, newData) {
+
     const transaction = await this.documentoModel.sequelize.transaction();
     try {
-      const updatedUsuario = await this.documentoModel.update(newData, {
+      const updatedMeta = await this.documentoModel.update(newData, {
         where: {
-          id: personal_id
+          id: metas_id,
+          personal_id:personal_id
         }
       }, {
         transaction
       });
       await transaction.commit();
 
-      return updatedUsuario;
+      return updatedMeta;
     } catch (error) {
       await transaction.rollback();
 
       throw error;
     }
   }
-  async delete(personal_id) {
+  async delete(personal_id,metas_id) {
     const transaction = await this.documentoModel.sequelize.transaction();
     try {
       const deleteUsuario = await this.documentoModel.destroy({
         where: {
-          id: personal_id
+          id: metas_id,
+          personal_id: personal_id
         }
       }, {
         transaction
@@ -61,23 +71,81 @@ class SequelizeDocumentoRepository {
       throw error;
     }
   }
-  async getAll(page, size) {
+  async get(page, size, value) {
     try {
       const Personal = await this.documentoModel.findAndCountAll({
         limit: size,
         offset: size * page,
+        where: {
+          meta: {
+            [Op.iLike]: `%${value}%`
+          }
+        },
+        include: [{
+          model: this.personalModel,
+          required: false,
+        }]
       });
       return Personal;
     } catch (error) {
       throw error;
     }
   }
-  async get(personal_id) {
+  async getMetasPersonal(page, size,personal_id,value) {
+    try {
+      const Personal = await this.documentoModel.findAndCountAll({
+        limit: size,
+        offset: size * page,
+        where: {
+          personal_id: personal_id,
+          meta: {
+            [Op.iLike]: `%${value}%`
+          }
+        },
+        include: [{
+          model: this.personalModel,
+          required: false,
+        }]
+      });
+      return Personal;
+    } catch (error) {
+      throw error;
+    }
+  }
+  async getMetaPersonal(personal_id,metas_id) {
     try {
       const Personal = await this.documentoModel.findOne({
         where: {
-          id: personal_id
-        }
+          personal_id: personal_id,
+          id:metas_id
+        },
+        include: [{
+          model: this.personalModel,
+          required: false,
+        }]
+      });
+      return Personal;
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  async getRawQuery(page, size, value) {
+    try {
+      const Personal = await this.database.query(`
+      select * from (
+      select pm.*,p.nombres || ' ' || p.a_paterno || ' ' || p.a_materno as nombre ,row_number() over (partition by personal_id order by fecha_prevista desc) as row_number 
+      from personal_metas pm
+      inner join personal p
+      on p.id = pm.personal_id
+      where p.nombres ilike '%${value}%' ) as T
+      where row_number=1
+      limit ${size} offset ${size*page}
+      `, {
+        type: Sequelize.QueryTypes.SELECT
+      }).then(res => {
+        console.log(res);
+        return res;
       });
       return Personal;
     } catch (error) {

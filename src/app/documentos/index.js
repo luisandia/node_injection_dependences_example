@@ -1,9 +1,9 @@
 module.exports = {
   CreateDocumento: require('./CreateDocumento'),
-  // UpdateMetas: require('./UpdateMetas'),
-  // DeleteMetas: require('./DeleteMetas'),
-  // GetMetas: require('./GetMetas'),
-  // GetMetasRawQuery: require('./GetMetasRawQuery'),
-  // GetMetasPersonal: require('./GetMetasPersonal'),
+  UpdateDocumento: require('./UpdateDocumento'),
+  DeleteDocumento: require('./DeleteDocumento'),
+  GetDocumento: require('./GetDocumento'),
+  GetDocumentoRawQuery: require('./GetDocumentoRawQuery'),
+  // GetDocumentoPersonal: require('./GetDocumentoPersonal'),
   // GetMetaPersonal: require('./GetMetaPersonal'),
 };
