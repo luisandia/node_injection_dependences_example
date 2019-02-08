@@ -3,6 +3,7 @@
 // const Globals = require('src/utils/Globals');
 // const CompleteUsuarioMapper = require('./SequelizeCompleteUsuarioMapper');
 // const bcrypt = require('bcryptjs');
+
 var Sequelize = require('sequelize');
 const Op = Sequelize.Op;
 class SequelizeDocumentoRepository {
@@ -18,8 +19,28 @@ class SequelizeDocumentoRepository {
   }
 
   async create(datos) {
+
     try {
-      const result = await this.documentoModel.create(datos);
+      let result = this.database.transaction().then((t) => {
+        let id = this.documentoModel.create(datos, {
+          transaction: t
+        }).then(() => {
+          var fs = require('fs');
+          original = req.files.fileKey.name
+          arrayPath = req.files.fileKey.path.split('/')
+          name_alias = arrayPath[arrayPath.length - 1]
+          delete arrayPath[arrayPath.length - 1];
+          new_path = arrayPath.join('/') + original
+          fs.rename(req.files.fileKey.path, new_path, function (err) {
+            if (err) console.log('ERROR: ' + err);
+          });
+          t.commit();
+        }).catch((err) => {
+          t.rollback();
+        });
+      });
+
+      // const result = await this.documentoModel.create(datos);
       return result;
     } catch (error) {
       if (error.name === 'SequelizeEmptyResultError') {
@@ -29,17 +50,19 @@ class SequelizeDocumentoRepository {
       }
       throw error;
     }
+
+
   }
 
 
-  async update(personal_id,metas_id, newData) {
+  async update(personal_id, metas_id, newData) {
 
     const transaction = await this.documentoModel.sequelize.transaction();
     try {
       const updatedMeta = await this.documentoModel.update(newData, {
         where: {
           id: metas_id,
-          personal_id:personal_id
+          personal_id: personal_id
         }
       }, {
         transaction
@@ -53,7 +76,7 @@ class SequelizeDocumentoRepository {
       throw error;
     }
   }
-  async delete(personal_id,metas_id) {
+  async delete(personal_id, metas_id) {
     const transaction = await this.documentoModel.sequelize.transaction();
     try {
       const deleteUsuario = await this.documentoModel.destroy({
@@ -91,7 +114,7 @@ class SequelizeDocumentoRepository {
       throw error;
     }
   }
-  async getDocumentosPersonal(page, size,personal_id,value) {
+  async getDocumentosPersonal(page, size, personal_id, value) {
     try {
       const Personal = await this.documentoModel.findAndCountAll({
         limit: size,
@@ -112,12 +135,12 @@ class SequelizeDocumentoRepository {
       throw error;
     }
   }
-  async getDocumentoPersonal(personal_id,metas_id) {
+  async getDocumentoPersonal(personal_id, metas_id) {
     try {
       const Personal = await this.documentoModel.findOne({
         where: {
           personal_id: personal_id,
-          id:metas_id
+          id: metas_id
         },
         include: [{
           model: this.personalModel,

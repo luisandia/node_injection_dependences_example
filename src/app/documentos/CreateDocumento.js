@@ -15,6 +15,7 @@ class CreateDocumento extends Operation {
     } = this.outputs;
     try {
       const result = await this.documentoRepository.create(datos);
+
       this.emit(SUCCESS, result);
     } catch (error) {
       if (error.message === 'ValidationError') {
