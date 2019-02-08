@@ -69,15 +69,6 @@ const DocumentoController = {
   },
   upload(req, res, next) {
     console.log('create user');;
-    // var fs = require('fs');
-    // original = req.files.fileKey.name
-    // arrayPath = req.files.fileKey.path.split('/')
-    // name_alias = arrayPath[arrayPath.length - 1]
-    // delete arrayPath[arrayPath.length - 1];
-    // new_path = arrayPath.join('/') + original
-    // fs.rename(req.files.fileKey.path, new_path, function (err) {
-    //   if (err) console.log('ERROR: ' + err);
-    // });
     res.status(Status.CREATED).json({
       status: 'success',
       message: 'Los datos de usuario ' + Globals.MESSAGE_CREACION_PLURAL,

@@ -25,14 +25,16 @@ class SequelizeDocumentoRepository {
         let id = this.documentoModel.create(datos, {
           transaction: t
         }).then(() => {
-          var fs = require('fs');
-          original = req.files.fileKey.name
-          arrayPath = req.files.fileKey.path.split('/')
-          name_alias = arrayPath[arrayPath.length - 1]
+          let fs = require('fs');
+          let arrayPath = datos.path.split('/')
+          let name_alias = arrayPath[arrayPath.length - 1]
           delete arrayPath[arrayPath.length - 1];
-          new_path = arrayPath.join('/') + original
-          fs.rename(req.files.fileKey.path, new_path, function (err) {
-            if (err) console.log('ERROR: ' + err);
+          let new_path = arrayPath.join('/') + datos.nombre
+          fs.rename(datos.path, new_path, (err) => {
+            if (err) {
+              t.rollback()
+              console.err('ERROR: ' + err);
+            }
           });
           t.commit();
         }).catch((err) => {
