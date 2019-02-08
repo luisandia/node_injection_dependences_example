@@ -21,6 +21,7 @@ const DocumentoController = {
     router.post('/upload', md_upload, this.upload);
     router.post('/', inject('createDocumento'), this.create);
     router.get('/', inject('getDocumentoRawQuery'), this.allRawQuery);
+    router.get('/doc/:image_name', inject('getFile'), this.getFile);
     router.put(
       '/:personal_id/:documento_id', inject('updateDocumento'), this.update);
     router.delete(
