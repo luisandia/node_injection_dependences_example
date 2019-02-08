@@ -1,14 +1,14 @@
 const Operation = require('src/app/Operation');
 
-class GetPersonal extends Operation {
+class GetDocumentoPersonal extends Operation {
   constructor({
-    personalRepository
+    documentoRepository
   }) {
     super();
-    this.personalRepository = personalRepository;
+    this.documentoRepository = documentoRepository;
   }
 
-  async execute(page, size,value) {
+  async execute(params) {
     const {
       SUCCESS,
       NOT_FOUND,
@@ -17,8 +17,8 @@ class GetPersonal extends Operation {
     } = this.outputs;
 
     try {
-      const personal = await this.personalRepository.getPersonal(page, size,value);
-      this.emit(SUCCESS, personal);
+      const documento = await this.documentoRepository.getDocumentoPersonal(params.personal_id, params.documento_id);
+      this.emit(SUCCESS, documento);
     } catch (error) {
       switch (error.message) {
         case 'ValidationError':
@@ -32,6 +32,6 @@ class GetPersonal extends Operation {
   }
 }
 
-GetPersonal.setOutputs(['SUCCESS', 'NOT_FOUND', 'VALIDATION_ERROR', 'ERROR']);
+GetDocumentoPersonal.setOutputs(['SUCCESS', 'NOT_FOUND', 'VALIDATION_ERROR', 'ERROR']);
 
-module.exports = GetPersonal;
+module.exports = GetDocumentoPersonal;

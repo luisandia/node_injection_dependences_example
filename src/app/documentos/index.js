@@ -4,6 +4,6 @@ module.exports = {
   DeleteDocumento: require('./DeleteDocumento'),
   GetDocumento: require('./GetDocumento'),
   GetDocumentoRawQuery: require('./GetDocumentoRawQuery'),
-  // GetDocumentoPersonal: require('./GetDocumentoPersonal'),
-  // GetMetaPersonal: require('./GetMetaPersonal'),
+  GetDocumentoPersonal: require('./GetDocumentoPersonal'),
+  GetDocumentosPersonal: require('./GetDocumentosPersonal'),
 };

@@ -3,11 +3,10 @@
 // const Globals = require('src/utils/Globals');
 // const CompleteUsuarioMapper = require('./SequelizeCompleteUsuarioMapper');
 // const bcrypt = require('bcryptjs');
-
-class SequelizeUsuariosRepository {
-  constructor({
-    PersonalModel
-  }) {
+var Sequelize = require('sequelize');
+const Op = Sequelize.Op;
+class SequelizePersonalRepository {
+  constructor({PersonalModel}) {
     this.personalModel = PersonalModel;
   }
 
@@ -102,8 +101,10 @@ class SequelizeUsuariosRepository {
 
   //   async deleteUsuario(user, datosUsuario) {
 
-  //     const usuarioId = await this.PersonalModel._getUsuarioIdByUserCode(user, datosUsuario.codigoUsuario);
-  //     const usuario = await this._getById(usuarioId);
+  //     const usuarioId = await
+  //     this.PersonalModel._getUsuarioIdByUserCode(user,
+  //     datosUsuario.codigoUsuario); const usuario = await
+  //     this._getById(usuarioId);
 
   //     const transaction = await this.PersonalModel.sequelize.transaction();
 
@@ -126,13 +127,8 @@ class SequelizeUsuariosRepository {
   async updatePersonal(personal_id, newData) {
     const transaction = await this.personalModel.sequelize.transaction();
     try {
-      const updatedUsuario = await this.personalModel.update(newData, {
-        where: {
-          id: personal_id
-        }
-      }, {
-        transaction
-      });
+      const updatedUsuario = await this.personalModel.update(
+          newData, {where: {id: personal_id}}, {transaction});
       await transaction.commit();
 
       return updatedUsuario;
@@ -145,13 +141,8 @@ class SequelizeUsuariosRepository {
   async deletePersonal(personal_id) {
     const transaction = await this.personalModel.sequelize.transaction();
     try {
-      const deleteUsuario = await this.personalModel.destroy({
-        where: {
-          id: personal_id
-        }
-      }, {
-        transaction
-      });
+      const deleteUsuario = await this.personalModel.destroy(
+          {where: {id: personal_id}}, {transaction});
       await transaction.commit();
       return deleteUsuario;
     } catch (error) {
@@ -159,11 +150,16 @@ class SequelizeUsuariosRepository {
       throw error;
     }
   }
-  async getPersonal(page,size) {
+  async getPersonal(page, size, value) {
     try {
       const Personal = await this.personalModel.findAndCountAll({
         limit: size,
-        offset: size*page,
+        offset: size * page,
+        where: {
+          nombres: {
+            [Op.iLike]: `%${value}%`
+          }
+        },
       });
       return Personal;
     } catch (error) {
@@ -172,11 +168,8 @@ class SequelizeUsuariosRepository {
   }
   async get(personal_id) {
     try {
-      const Personal = await this.personalModel.findOne({
-        where:{
-          id:personal_id
-        }
-      });
+      const Personal =
+          await this.personalModel.findOne({where: {id: personal_id}});
       return Personal;
     } catch (error) {
       throw error;
@@ -209,7 +202,8 @@ class SequelizeUsuariosRepository {
   //     } catch (error) {
   //       if (error.name === 'SequelizeEmptyResultError') {
   //         const notFoundError = new Error('NotFoundError');
-  //         notFoundError.details = `Usuario with usuarioId ${usuarioId} can't be found.`;
+  //         notFoundError.details = `Usuario with usuarioId ${usuarioId} can't
+  //         be found.`;
 
   //         throw notFoundError;
   //       }
@@ -226,7 +220,8 @@ class SequelizeUsuariosRepository {
   //     } catch (error) {
   //       if (error.name === 'SequelizeEmptyResultError') {
   //         const notFoundError = new Error('NotFoundError888');
-  //         notFoundError.details = `Usuario con numero ${usuario.usuarioId} no existe.`;
+  //         notFoundError.details = `Usuario con numero ${usuario.usuarioId} no
+  //         existe.`;
 
   //         throw notFoundError;
   //       }
@@ -234,7 +229,6 @@ class SequelizeUsuariosRepository {
   //       throw error;
   //     }
   //   }
-
 }
 
-module.exports = SequelizeUsuariosRepository;
+module.exports = SequelizePersonalRepository;

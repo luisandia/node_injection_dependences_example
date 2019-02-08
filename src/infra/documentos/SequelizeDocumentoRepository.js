@@ -91,14 +91,14 @@ class SequelizeDocumentoRepository {
       throw error;
     }
   }
-  async getMetasPersonal(page, size,personal_id,value) {
+  async getDocumentosPersonal(page, size,personal_id,value) {
     try {
       const Personal = await this.documentoModel.findAndCountAll({
         limit: size,
         offset: size * page,
         where: {
           personal_id: personal_id,
-          meta: {
+          nombre: {
             [Op.iLike]: `%${value}%`
           }
         },
@@ -112,7 +112,7 @@ class SequelizeDocumentoRepository {
       throw error;
     }
   }
-  async getMetaPersonal(personal_id,metas_id) {
+  async getDocumentoPersonal(personal_id,metas_id) {
     try {
       const Personal = await this.documentoModel.findOne({
         where: {
@@ -134,8 +134,8 @@ class SequelizeDocumentoRepository {
     try {
       const Personal = await this.database.query(`
       select * from (
-      select pm.*,p.nombres || ' ' || p.a_paterno || ' ' || p.a_materno as nombre ,row_number() over (partition by personal_id order by fecha_prevista desc) as row_number 
-      from personal_metas pm
+      select pm.*,p.nombres || ' ' || p.a_paterno || ' ' || p.a_materno as nombre_empleado ,row_number() over (partition by personal_id order by nombre desc) as row_number 
+      from personal_documentos pm
       inner join personal p
       on p.id = pm.personal_id
       where p.nombres ilike '%${value}%' ) as T

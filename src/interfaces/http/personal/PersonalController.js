@@ -76,7 +76,7 @@ const PersonalController = {
       })
       .on(ERROR, next);
 
-    getPersonal.execute(Number(req.query.page), Number(req.query.size));
+    getPersonal.execute(Number(req.query.page), Number(req.query.size),req.query.value);
   },
   get(req, res, next) {
 

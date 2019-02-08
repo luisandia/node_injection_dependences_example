@@ -94,8 +94,8 @@ const {
   DeleteDocumento,
   GetDocumento,
   GetDocumentoRawQuery,
-  // GetDocumentoPersonal,
-  // GetMetaPersonal
+  GetDocumentoPersonal,
+  GetDocumentosPersonal
 } = require('./app/documentos');
 container.register({
   createDocumento: asClass(CreateDocumento),
@@ -103,8 +103,8 @@ container.register({
   deleteDocumento: asClass(DeleteDocumento),
   getDocumento: asClass(GetDocumento),
   getDocumentoRawQuery: asClass(GetDocumentoRawQuery),
-  // getDocumentoPersonal: asClass(GetDocumentoPersonal),
-  // getMetaPersonal: asClass(GetMetaPersonal)
+  getDocumentoPersonal: asClass(GetDocumentoPersonal),
+  getDocumentosPersonal: asClass(GetDocumentosPersonal)
 });
 
 
