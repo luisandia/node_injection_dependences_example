@@ -67,8 +67,8 @@ class SequelizeDocumentoRepository {
           personal_id: personal_id
         }
       }, {
-        transaction
-      });
+          transaction
+        });
       await transaction.commit();
 
       return updatedMeta;
@@ -87,8 +87,8 @@ class SequelizeDocumentoRepository {
           personal_id: personal_id
         }
       }, {
-        transaction
-      });
+          transaction
+        });
       await transaction.commit();
       return deleteUsuario;
     } catch (error) {
@@ -165,13 +165,13 @@ class SequelizeDocumentoRepository {
       on p.id = pm.personal_id
       where p.nombres ilike '%${value}%' ) as T
       where row_number=1
-      limit ${size} offset ${size*page}
+      limit ${size} offset ${size * page}
       `, {
-        type: Sequelize.QueryTypes.SELECT
-      }).then(res => {
-        console.log(res);
-        return res;
-      });
+          type: Sequelize.QueryTypes.SELECT
+        }).then(res => {
+          console.log(res);
+          return res;
+        });
       return Personal;
     } catch (error) {
       throw error;

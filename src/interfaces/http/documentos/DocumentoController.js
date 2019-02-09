@@ -1,18 +1,13 @@
-const {
-  Router
-} = require('express');
-const {
-  inject
-} = require('awilix-express');
+const { Router } = require('express');
+const { inject } = require('awilix-express');
 const Status = require('http-status');
+const fs = require('fs');
+const path = require('path');
 // const verificarToken = require('./../autorizacion/VerificarToken');
 const Globals = require('src/utils/Globals');
 const verificarToken = require('../autorizacion/VerificarToken');
 const cm = require('connect-multiparty');
-const md_upload = cm({
-  uploadDir: 'src/uploads',
-  autoFiles: false
-});
+const md_upload = cm({ uploadDir: 'src/uploads', autoFiles: false });
 const DocumentoController = {
   get router() {
     const router = Router();
@@ -21,7 +16,7 @@ const DocumentoController = {
     router.post('/upload', md_upload, this.upload);
     router.post('/', inject('createDocumento'), this.create);
     router.get('/', inject('getDocumentoRawQuery'), this.allRawQuery);
-    router.get('/doc/:image_name', inject('getFile'), this.getFile);
+    router.get('/doc/:image_name', this.getfile);
     router.put(
       '/:personal_id/:documento_id', inject('updateDocumento'), this.update);
     router.delete(
@@ -39,21 +34,16 @@ const DocumentoController = {
   create(req, res, next) {
     console.log('create user');
 
-    const {
-      createDocumento
-    } = req;
-    const {
-      SUCCESS,
-      ERROR,
-      VALIDATION_ERROR
-    } = createDocumento.outputs;
+    const { createDocumento } = req;
+    const { SUCCESS, ERROR, VALIDATION_ERROR } = createDocumento.outputs;
     createDocumento
       .on(SUCCESS,
         (usuario) => {
           res.status(Status.CREATED).json({
             status: 'success',
-            message: 'Los datos de usuario ' + Globals.MESSAGE_CREACION_PLURAL,
-            data: usuario // usuarioSerializer.serialize(usuario)
+            message:
+              'Los datos de usuario ' + Globals.MESSAGE_CREACION_PLURAL,
+            data: usuario  // usuarioSerializer.serialize(usuario)
           });
         })
       .on(VALIDATION_ERROR,
@@ -69,24 +59,20 @@ const DocumentoController = {
     createDocumento.execute(req.body);
   },
   upload(req, res, next) {
-    console.log('create user');;
+    console.log('create user');
+    ;
     res.status(Status.CREATED).json({
       status: 'success',
       message: 'Los datos de usuario ' + Globals.MESSAGE_CREACION_PLURAL,
-      data: req.files.fileKey // usuarioSerializer.serialize(usuario)
+      data: req.files.fileKey  // usuarioSerializer.serialize(usuario)
     });
-
-
   },
   all(req, res, next) {
     const {
       getDocumento,
       pageSerializer,
     } = req;
-    const {
-      SUCCESS,
-      ERROR
-    } = getDocumento.outputs;
+    const { SUCCESS, ERROR } = getDocumento.outputs;
 
     getDocumento
       .on(SUCCESS,
@@ -101,14 +87,8 @@ const DocumentoController = {
       Number(req.query.page), Number(req.query.size), (req.query.value));
   },
   allRawQuery(req, res, next) {
-    const {
-      getDocumentoRawQuery,
-      pageSerializerRawQuery
-    } = req;
-    const {
-      SUCCESS,
-      ERROR
-    } = getDocumentoRawQuery.outputs;
+    const { getDocumentoRawQuery, pageSerializerRawQuery } = req;
+    const { SUCCESS, ERROR } = getDocumentoRawQuery.outputs;
 
     getDocumentoRawQuery
       .on(SUCCESS,
@@ -129,13 +109,8 @@ const DocumentoController = {
       updateDocumento,
       // usuarioSerializer
     } = req;
-    const {
-      SUCCESS,
-      ERROR,
-      NOT_FOUND,
-      VALIDATION_ERROR
-    } =
-    updateDocumento.outputs;
+    const { SUCCESS, ERROR, NOT_FOUND, VALIDATION_ERROR } =
+      updateDocumento.outputs;
 
     updateDocumento
       .on(SUCCESS,
@@ -144,16 +119,13 @@ const DocumentoController = {
             status: 'success',
             message: 'Los datos del usuario ' +
               Globals.MESSAGE_ACTUALIZACION_PLURAL,
-            data: usuario // usuarioSerializer.serialize(usuario)
+            data: usuario  // usuarioSerializer.serialize(usuario)
           });
         })
       .on(NOT_FOUND,
         (error) => {
           res.status(Status.NOT_FOUND)
-            .json({
-              type: 'NotFoundError',
-              details: error.details
-            });
+            .json({ type: 'NotFoundError', details: error.details });
         })
       .on(VALIDATION_ERROR,
         (error) => {
@@ -169,14 +141,8 @@ const DocumentoController = {
   },
 
   delete(req, res, next) {
-    const {
-      deleteDocumento
-    } = req;
-    const {
-      SUCCESS,
-      ERROR,
-      NOT_FOUND
-    } = deleteDocumento.outputs;
+    const { deleteDocumento } = req;
+    const { SUCCESS, ERROR, NOT_FOUND } = deleteDocumento.outputs;
 
     deleteDocumento
       .on(SUCCESS,
@@ -191,10 +157,7 @@ const DocumentoController = {
       .on(NOT_FOUND,
         (error) => {
           res.status(Status.NOT_FOUND)
-            .json({
-              type: 'NotFoundError',
-              details: error.details
-            });
+            .json({ type: 'NotFoundError', details: error.details });
         })
       .on(ERROR, next);
 
@@ -205,10 +168,7 @@ const DocumentoController = {
       getDocumentoPersonal,
       pageSerializer,
     } = req;
-    const {
-      SUCCESS,
-      ERROR
-    } = getDocumentoPersonal.outputs;
+    const { SUCCESS, ERROR } = getDocumentoPersonal.outputs;
 
     getDocumentoPersonal
       .on(SUCCESS,
@@ -219,14 +179,8 @@ const DocumentoController = {
     getDocumentoPersonal.execute(req.params);
   },
   getDocumentosPersonal(req, res, next) {
-    const {
-      getDocumentosPersonal,
-      pageSerializer
-    } = req;
-    const {
-      SUCCESS,
-      ERROR
-    } = getDocumentosPersonal.outputs;
+    const { getDocumentosPersonal, pageSerializer } = req;
+    const { SUCCESS, ERROR } = getDocumentosPersonal.outputs;
 
     getDocumentosPersonal
       .on(SUCCESS,
@@ -238,6 +192,17 @@ const DocumentoController = {
       .on(ERROR, next);
     req.query.personal_id = req.params.personal_id
     getDocumentosPersonal.execute(req.query);
+  },
+  getfile(req, res, next) {
+    let path_photo = 'src/uploads/' + req.params.image_name;
+
+    fs.exists(path_photo, (exists) => {
+      if (exists) {
+        res.sendFile(path.resolve(path_photo));
+      } else {
+        res.status(400).send({ message: "Documento no existe" })
+      }
+    })
   }
 };
 
