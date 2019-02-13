@@ -1,4 +1,5 @@
-const csvFilePath = '/home/lap0020-2018/Downloads/Reporte_Enero_2019.csv';
+// const csvFilePath = '/home/lap0020-2018/Downloads/Reporte_Enero_2019.csv';
+const csvFilePath = '/home/zafiron/Descargas/Reporte_Enero_2019.csv';
 const fs = require('fs');
 const csv = require('fast-csv');
 var stream = fs.createReadStream(csvFilePath);
@@ -12,7 +13,7 @@ function Horario(id, date, begin) {
   o.dates = {
     date: date,
     begin: begin,
-    end: ''
+    end: 'null'
   };
   o.printDate = function () {
     console.log(this.dates);
@@ -31,17 +32,32 @@ let prev;
 var csvStream = csv()
   .on("data", (data) => {
     if (Number(data[0])) {
-      file.write(data.join(' ') + '\n')
+      // file.write(data.join(' ') + '\n')
       if (id !== data[0]) {
         id = data[0];
-        arrayPersons.push(new Horario(id, data[2], data[4]))
+        arrayPersons.push(new Horario(id, data[2], data[4] ))
+        
         i++;
-      }
+        if(i>0)
+          arrayPersons[i-1].dates.end=prev[5]
 
-      if (prev && arrayPersons[i].dates.date != prev[2]) {
-        arrayPersons[i].dates.end = prev[5];
       }
+      else 
+      {
+        console.log("comparando " +
+          data[2] + " " + (prev && prev[2]))
+        if (prev && data[2] != prev[2]) {
+          // console.log("entro")
 
+
+          arrayPersons[i].dates.end = prev[5];
+
+          arrayPersons.push(new Horario(data[0], data[2], data[4]))
+          i++;
+          // if (id !== data[0]) 
+          // id=data[0]
+        }
+      }
       prev = data;
     }
   })
