@@ -11,7 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "awilix": "^4.2.0",
-    "awilix-express": "^0.11.0",
+    "awilix-express": "^2.1.1",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
     "compression": "^1.7.3",
